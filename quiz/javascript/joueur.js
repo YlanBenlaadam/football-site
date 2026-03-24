@@ -16,92 +16,221 @@
 
 const questionsByLevel = {
   facile: [
-    {
-      clues: ["Sporting CP", "Manchester United", "Real Madrid", "Juventus Turin","Manchester United", "Al-Nassr"],
-      answer: "Cristiano Ronaldo",
-      options: ["Cristiano Ronaldo", "Karim Benzema", "Luis Figo", "Bruno Fernandes"]
-    },
-    {
-      clues: ["Basel","Chelsea","Roma","Liverpool"],
-      answer: "Mohamed Salah",
-      options: ["Mohamed Salah","Sadio Mane","Riyad Mahrez","Hakim Ziyech"]
-    },
-    {
-      clues: ["Manchester City","Chelsea"],
-      answer: "Cole Palmer",
-      options: ["Cole Palmer","Phil Foden","James Maddison","Harvey Elliott"]
-    },
-    {
-      clues: ["São Paulo", "Milan", "Real Madrid", "Orlando City"],
-      answer: "Ricardo Kaká",
-      options: ["Ricardo Kaká", "Rivaldo", "Robinho", "Cafu"]
-    },
-    {
-      clues: ["Newell's Old Boys", "FC Barcelone", "Paris Saint-Germain", "Inter Miami"],
-      answer: "Lionel Messi",
-      options: ["Sergio Agüero", "Lionel Messi", "Ángel Di María", "Neymar"]
-    },
-    {
-      clues: ["Santos", "FC Barcelone", "Paris Saint-Germain", "Al-Hilal","Santos"],
-      answer: "Neymar",
-      options: ["Neymar", "Robinho", "Raphinha", "Vinícius Jr"]
-    },
-    {
-      clues: ["Olympique Lyonnais", "Real Madrid", "Al-Ittihad"],
-      answer: "Karim Benzema",
-      options: ["Karim Benzema", "Olivier Giroud", "N'Golo Kanté", "Eden Hazard"]
-    },
-    {
-      clues: ["Rosario Central", "Benfica Lisbonne", "Real Madrid", "Manchester United", "Paris Saint-Germain", "Juventus FC", "Benfica Lisbonne"],
-      answer: "Angel Di Maria",
-      options: ["Angel Di Maria", "Paulo Dybala", "Carlos Tévez", "Enzo Fernández"]
-    },
-    {
-      clues: ["PSV Eindhoven", "Manchester United", "Olympique Lyonnais", "FC Barcelone", "Atlético de Madrid", "Corinthians"],
-      answer: "Memphis Depay",
-      options: ["Memphis Depay", "Cody Gakpo", "Steven Bergwijn", "Quincy Promes"]
-    },
-    {
-      clues: ["FC Barcelone", "Valence CF", "FC Barcelone", "Inter Miami"],
-      answer: "Jordi Alba",
-      options: ["Jordi Alba", "Sergi Roberto", "Alejandro Balde", "Joan Capdevila"]
-    },
-    {
-      clues: ["Paris Saint-Germain", "Juventus FC", "Bayern Munich", "Al-Nassr"],
-      answer: "Kingsley Coman",
-      options: ["Kingsley Coman", "Franck Ribéry", "Ousmane Dembélé", "Moussa Diaby"]
-    },
-    {
-      clues: ["Grenoble Foot 38", "FC Istres", "Tours FC", "Montpellier HSC", "Arsenal FC", "Chelsea FC", "AC Milan"],
-      answer: "Olivier Giroud",
-      options: ["Olivier Giroud", "Alexandre Lacazette", "Karim Benzema", "Wissam Ben Yedder"]
-    },
-    {
-      clues: ["Athletic Club", "Chelsea", "Real Madrid", "Arsenal"],
-      answer: "Kepa Arrizabalaga",
-      options: ["Kepa Arrizabalaga", "David Raya", "Robert Sánchez", "Édouard Mendy"]
-    },
-    {
-      clues: ["Saint-Étienne", "Nice", "Marseille", "Arsenal"],
-      answer: "William Saliba",
-      options: ["William Saliba", "Ibrahima Konaté", "Jean-Clair Todibo", "Loïc Badé"]
-    },
-    {
-      clues: ["Benfica","Monaco","Manchester City"],
-      answer: "Bernardo Silva",
-      options: ["Bernardo Silva","Bruno Fernandes","Joao Felix","Vitinha"]
-    },
-    {
-      clues: ["Lyon","Manchester City"],
-      answer: "Rayan Cherki",
-      options: ["Rayan Cherki","Amine Gouiri","Bradley Barcola","Mathys Tel"]
-    },
-
-    {
-      clues: ["Hambourg", "Bayer Leverkusen", "Tottenham", "Los Angeles FC"],
-      answer: "Son Heung-min",
-      options: ["Olivier Giroud", "Modric", "Tanguy Ndombele", "Son Heung-min"]
-    }
+  		{
+				clues: ["Sporting CP", "Manchester United", "Real Madrid", "Juventus Turin", "Manchester United", "Al-Nassr"],
+				answer: "Cristiano Ronaldo",
+				options: ["Karim Benzema", "Cristiano Ronaldo", "Luis Figo", "Bruno Fernandes"]
+		},
+		{
+				clues: ["Basel", "Chelsea", "Roma", "Liverpool"],
+				answer: "Mohamed Salah",
+				options: ["Sadio Mané", "Mohamed Salah", "Riyad Mahrez", "Hakim Ziyech"]
+		},
+		{
+				clues: ["Manchester City", "Chelsea"],
+				answer: "Cole Palmer",
+				options: ["Phil Foden", "Cole Palmer", "James Maddison", "Harvey Elliott"]
+		},
+		{
+				clues: ["São Paulo", "Milan", "Real Madrid", "Orlando City"],
+				answer: "Ricardo Kaká",
+				options: ["Rivaldo", "Robinho", "Ricardo Kaká", "Cafu"]
+		},
+		{
+				clues: ["Newell's Old Boys", "FC Barcelone", "Paris Saint-Germain", "Inter Miami"],
+				answer: "Lionel Messi",
+				options: ["Sergio Agüero", "Ángel Di María", "Neymar", "Lionel Messi"]
+		},
+		{
+				clues: ["Santos", "FC Barcelone", "Paris Saint-Germain", "Al-Hilal", "Santos"],
+				answer: "Neymar",
+				options: ["Robinho", "Neymar", "Raphinha", "Vinícius Jr"]
+		},
+		{
+				clues: ["Olympique Lyonnais", "Real Madrid", "Al-Ittihad"],
+				answer: "Karim Benzema",
+				options: ["Karim Benzema", "Olivier Giroud", "N'Golo Kanté", "Eden Hazard"]
+		},
+		{
+				clues: ["Rosario Central", "Benfica Lisbonne", "Real Madrid", "Manchester United", "Paris Saint-Germain", "Juventus FC", "Benfica Lisbonne"],
+				answer: "Angel Di Maria",
+				options: ["Paulo Dybala", "Angel Di Maria", "Carlos Tévez", "Enzo Fernández"]
+		},
+		{
+				clues: ["PSV Eindhoven", "Manchester United", "Olympique Lyonnais", "FC Barcelone", "Atlético de Madrid", "Corinthians"],
+				answer: "Memphis Depay",
+				options: ["Memphis Depay", "Cody Gakpo", "Steven Bergwijn", "Quincy Promes"]
+		},
+		{
+				clues: ["FC Barcelone", "Valence CF", "FC Barcelone", "Inter Miami"],
+				answer: "Jordi Alba",
+				options: ["Sergi Roberto", "Jordi Alba", "Alejandro Balde", "Joan Capdevila"]
+		},
+		{
+				clues: ["Paris Saint-Germain", "Juventus FC", "Bayern Munich", "Al-Nassr"],
+				answer: "Kingsley Coman",
+				options: ["Franck Ribéry", "Ousmane Dembélé", "Kingsley Coman", "Moussa Diaby"]
+		},
+		{
+				clues: ["Grenoble Foot 38", "FC Istres", "Tours FC", "Montpellier HSC", "Arsenal FC", "Chelsea FC", "AC Milan"],
+				answer: "Olivier Giroud",
+				options: ["Alexandre Lacazette", "Karim Benzema", "Olivier Giroud", "Wissam Ben Yedder"]
+		},
+		{
+				clues: ["Athletic Club", "Chelsea", "Real Madrid", "Arsenal"],
+				answer: "Kepa Arrizabalaga",
+				options: ["David Raya", "Robert Sánchez", "Édouard Mendy", "Kepa Arrizabalaga"]
+		},
+		{
+				clues: ["Saint-Étienne", "Nice", "Marseille", "Arsenal"],
+				answer: "William Saliba",
+				options: ["Ibrahima Konaté", "William Saliba", "Jean-Clair Todibo", "Loïc Badé"]
+		},
+		{
+				clues: ["Benfica", "Monaco", "Manchester City"],
+				answer: "Bernardo Silva",
+				options: ["Bernardo Silva", "Bruno Fernandes", "Joao Felix", "Vitinha"]
+		},
+		{
+				clues: ["Lyon", "Manchester City"],
+				answer: "Rayan Cherki",
+				options: ["Amine Gouiri", "Rayan Cherki", "Bradley Barcola", "Mathys Tel"]
+		},
+		{
+				clues: ["Hambourg", "Bayer Leverkusen", "Tottenham", "Los Angeles FC"],
+				answer: "Son Heung-min",
+				options: ["Olivier Giroud", "Luka Modrić", "Son Heung-min", "Tanguy Ndombele"]
+		},
+		{
+				clues: ["Birmingham City", "Borussia Dortmund", "Real Madrid"],
+				answer: "Jude Bellingham",
+				options: ["Phil Foden", "Pedri", "Florian Wirtz", "Jude Bellingham"]
+		},
+		{
+				clues: ["Brest", "Metz", "Marseille", "Bayern Munich", "Fiorentina"],
+				answer: "Franck Ribéry",
+				options: ["Franck Ribéry", "Robert Lewandowski", "Robinho", "Serge Gnabry"]
+		},
+		{
+				clues: ["Metz", "Red Bull Salzburg", "Southampton", "Liverpool", "Bayern Munich", "Al-Nassr"],
+				answer: "Sadio Mané",
+				options: ["Mohamed Salah", "Sadio Mané", "Roberto Firmino", "Diogo Jota"]
+		},
+		{
+				clues: ["FC Barcelone", "Inter Miami"],
+				answer: "Sergio Busquets",
+				options: ["Thiago Alcântara", "Xavi", "Andrés Iniesta", "Sergio Busquets"]
+		},
+		{
+				clues: ["Palmeiras", "Inter Milan", "Real Madrid", "Fenerbahçe"],
+				answer: "Roberto Carlos",
+				options: ["Cafu", "Roberto Carlos", "Lúcio", "Roque Júnior"]
+		},
+		{
+				clues: ["Monaco", "Juventus", "Arsenal", "FC Barcelone", "Red Bull New York"],
+				answer: "Thierry Henry",
+				options: ["David Trezeguet", "Thierry Henry", "Sylvain Wiltord", "Robert Pires"]
+		},
+		{
+				clues: ["Parme", "Juventus", "Paris Saint-Germain"],
+				answer: "Gianluigi Buffon",
+				options: ["Iker Casillas", "Gianluigi Buffon", "Edwin van der Sar", "Petr Čech"]
+		},
+		{
+				clues: ["Real Sociedad", "Liverpool", "Real Madrid", "Bayern Munich"],
+				answer: "Xabi Alonso",
+				options: ["Steven Gerrard", "Fernando Torres", "Xabi Alonso", "Gareth Bale"]
+		},
+		{
+				clues: ["Guingamp", "Marseille", "Chelsea", "Galatasaray"],
+				answer: "Didier Drogba",
+				options: ["Samuel Eto'o", "Michael Essien", "Didier Drogba", "Nicolas Anelka"]
+		},
+		{
+				clues: ["Ajax", "Juventus", "Inter Milan", "FC Barcelone", "AC Milan", "Paris Saint-Germain", "Manchester United"],
+				answer: "Zlatan Ibrahimović",
+				options: ["Dimitar Berbatov", "Wayne Rooney", "Carlos Tevez", "Zlatan Ibrahimović"]
+		},
+		{
+				clues: ["FC Barcelone", "Bayern Munich", "Liverpool"],
+				answer: "Thiago Alcântara",
+				options: ["Thiago Alcântara", "Joshua Kimmich", "Leon Goretzka", "Thomas Müller"]
+		},
+		{
+				clues: ["Le Havre", "Olympique Lyonnais", "Real Madrid"],
+				answer: "Ferland Mendy",
+				options: ["Lucas Hernández", "Ferland Mendy", "Theo Hernández", "Alphonse Areola"]
+		},
+		{
+				clues: ["Valence CF", "FC Barcelone", "Atlético de Madrid", "New York City FC"],
+				answer: "David Villa",
+				options: ["Fernando Torres", "Álvaro Morata", "David Villa", "Diego Costa"]
+		},
+		{
+				clues: ["Schalke 04", "Manchester City", "Bayern Munich"],
+				answer: "Leroy Sané",
+				options: ["Serge Gnabry", "Leroy Sané", "Kingsley Coman", "Julian Draxler"]
+		},
+		{
+				clues: ["Atlético de Madrid", "Chelsea", "Atlético de Madrid"],
+				answer: "Diego Costa",
+				options: ["Álvaro Morata", "Fernando Torres", "David Villa", "Diego Costa"]
+		},
+		{
+				clues: ["Saint-Étienne", "Paris Saint-Germain", "Juventus", "Inter Miami"],
+				answer: "Blaise Matuidi",
+				options: ["Paul Pogba", "Blaise Matuidi", "N'Golo Kanté", "Adrien Rabiot"]
+		},
+		{
+				clues: ["Anderlecht", "Everton", "Manchester United", "Inter Milan", "Napoli"],
+				answer: "Romelu Lukaku",
+				options: ["Romelu Lukaku", "Edin Džeko", "Michy Batshuayi", "Divock Origi"]
+		},
+		{
+				clues: ["Lille", "Chelsea", "Real Madrid"],
+				answer: "Eden Hazard",
+				options: ["Kevin De Bruyne", "Leandro Trossard", "Eden Hazard", "Yannick Carrasco"]
+		},
+		{
+				clues: ["Genk", "Chelsea", "Wolfsburg", "Manchester City", "Napoli"],
+				answer: "Kevin De Bruyne",
+				options: ["Eden Hazard", "Kevin De Bruyne", "Axel Witsel", "Dries Mertens"]
+		},
+		{
+				clues: ["Atlético Nacional", "Nice", "Arsenal", "Napoli"],
+				answer: "David Ospina",
+				options: ["Manuel Neuer", "Hugo Lloris", "Alisson Becker", "David Ospina"]
+		},
+		{
+				clues: ["Ajax", "Liverpool", "FC Barcelone", "Atlético de Madrid", "Inter Miami"],
+				answer: "Luis Suárez",
+				options: ["Edinson Cavani", "Diego Forlán", "Luis Suárez", "Gonzalo Higuaín"]
+		},
+		{
+				clues: ["Monaco", "FC Barcelone", "Manchester City"],
+				answer: "Yaya Touré",
+				options: ["Yaya Touré", "Kolo Touré", "Didier Drogba", "Wilfried Bony"]
+		},
+		{
+				clues: ["Southampton", "Tottenham", "Real Madrid", "Los Angeles FC"],
+				answer: "Gareth Bale",
+				options: ["Ryan Giggs", "Gareth Bale", "Aaron Ramsey", "Joe Allen"]
+		},
+		{
+				clues: ["Manchester United", "Juventus", "Manchester United", "Juventus"],
+				answer: "Paul Pogba",
+				options: ["Blaise Matuidi", "N'Golo Kanté", "Paul Pogba", "Moussa Sissoko"]
+		},
+		{
+				clues: ["PSV Eindhoven", "Chelsea", "Real Madrid", "Bayern Munich"],
+				answer: "Arjen Robben",
+				options: ["Arjen Robben", "Franck Ribéry", "Robinho", "Wesley Sneijder"]
+		},
+		{
+				clues: ["Ajax", "Real Madrid", "Inter Milan", "Galatasaray"],
+				answer: "Wesley Sneijder",
+				options: ["Wesley Sneijder", "Arjen Robben", "Rafael van der Vaart", "Nigel de Jong"]
+		}
 
   ],
 
@@ -580,7 +709,46 @@ const questionsByLevel = {
       answer: "Harry Kane",
       options: ["Harry Kane", "Niclas Füllkrug", "Serhou Guirassy", "Deniz Undav"]
     },
-
+    {
+      clues: ["SGreuther Fürth", "TSG Hoffenheim", "RB Leipzig"],
+      answer: "David Raum",
+      options: ["Alejandro Grimaldo", "David Raum", "Maximilian Beier", "Oliver Baumann"]
+    },
+    {
+      clues: ["Leganés", "RB Leipzig"],
+      answer: "Yan Diomandé",
+      options: ["Johan Bakayoko", "Noussair Mazraoui", "Yan Diomandé", "Brajan Gruda"]
+    },
+    {
+      clues: ["Monaco", "Bayer Leverkusen"],
+      answer: "Eliesse Ben Seghir",
+      options: ["Ibrahim Maza", "Exequiel Palacios", "Eliesse Ben Seghir", "Maghnes Akliouche"]
+    },
+    {
+      clues: ["Valence CF",,"FC Barcelone", "Benfica", "Bayer Leverkusen"],
+      answer: "Alejandro Grimaldo",
+      options: ["David Raum", "Luca Netz", "Lucas Vázquez", "Alejandro Grimaldo"]
+    },
+    {
+      clues: [ "Vitorià SC", "Bayer Leverkusen"],
+      answer: "Edmond Tapsoba",
+      options: ["Victor Boniface", "Jarell Quansah", "Edmond Tapsoba", "Jonathan Tah"]
+    },
+    {
+      clues: ["Rennes", "Nottingham Forest", "Eintracht Frankfurt"],
+      answer: "Arnaud Kalimuendo",
+      options: ["Omar Marmoush", "Hugo Ekitike", "Jean-Mattéo Bahoya", "Arnaud Kalimuendo"]
+    },
+    {
+      clues: ["Stade Rennais","Galatasaray","Bayern Munich","Galatasaray"],
+      answer: "Sacha Boey",
+      options: ["Konrad Laimer", "Sacha Boey", "Josip Stanišić", "Thomas Müller"]
+    },
+    {
+      clues: ["Borussia Dortmund", "Club Bruges"],
+      answer: "Julien Duranville",
+      options: ["Karim Adeyemi", "Julien Duranville", "Jamie Gittens", "Samuel Mbangula"]
+    },
     {
       clues: [ "Marseille", "St Etienne", "Montpellier", "Lille","Olympiakos","FC Nantes"],
       answer: "Rémy Cabella",
@@ -592,6 +760,96 @@ const questionsByLevel = {
       clues: ["Genk", "OH Leuven", "Lommel", "Brighton", "Arsenal"],
       answer: "Leandro Trossard",
       options: ["Leandro Trossard", "Jeremy Doku", "Yannick Carrasco", "Ben White"]
+    },
+    {
+				clues: ["Union Berlin"],
+				answer: "David Preu",
+				options: ["Ilyas Ansah", "David Preu", "Andrej Ilić", "Rani Khedira"]
+		},
+		{
+				clues: ["Augsburg"],
+				answer: "Nico Banks",
+				options: ["Cédric Zesiger", "Kosta Nedeljković", "Max Bauer", "Nico Banks"]
+		},
+		{
+				clues: ["Fortuna Dusseldorf","Hanovre 96","Hoffenheim"],
+				answer: "Ihlas Bebou",
+				options: ["Bazoumana Touré", "Ihlas Bebou", "Alexander Prass", "Andrej Kramarić"]
+		},
+		{
+				clues: ["Slavia Prague","West Ham","Hoffenheim"],
+				answer: "Vladimír Coufal",
+				options: ["Alexander Prass", "Vladimír Coufal", "Valentin Gendrey", "Koki Machida"]
+		},
+		{
+				clues: ["Redbull Salzbourg","Sturm Gaz","Hoffenheim"],
+				answer: "Alexander Prass",
+				options: ["Vladimír Coufal", "Wouter Burger", "Grischa Prömel", "Alexander Prass"]
+		},
+		{
+				clues: ["Red Bull Salzburg", "Hoffenheim"],
+				answer: "Bernardo",
+				options: ["Robin Hranáč", "Albian Hajdari", "Bernardo", "Ozan Kabak"]
+		},
+    {
+      clues: ["SC Fribourg","Borussia Dortmund","Borussia Mönchengladbach","SC Fribourg"],
+      answer: "Matthias Ginter",
+      options: ["Kiliann Sildillia", "Matthias Ginter", "Tim Drexler", "Yannik Keitel"]
+    },
+    {
+      clues: ["ESTAC Troyes", "SC Freiburg"],
+      answer: "Cyriaque Irié",
+      options: ["Derry Scherhant", "Junior Adamu", "Eren Dinkçi", "Cyriaque Irié"]
+    },
+    {
+      clues: ["SC Freiburg"],
+      answer: "Niklas Sauter",
+      options: ["Philipp Treu", "Cyriaque Irié", "Niklas Sauter", "Christian Günter"]
+    },
+    {
+      clues: ["Herta Berlin","SC Freiburg"],
+      answer: "Derry Scherhant",
+      options: ["Cyriaque Irié", "Jan-Niklas Beste", "Derry Scherhant", "Yuito Suzuki"]
+    },
+    {
+      clues: ["Borussia Dortmund"],
+      answer: "Filippo Mane",
+      options: ["Nico Schlotterbeck", "Tim Pfeiffer", "Filippo Mane", "Waldemar Anton"]
+    },
+    {
+      clues: ["VFB Stuttgart", "Leipzig", "Augsburg", "Union Berlin"],
+      answer: "Rani Khedira",
+      options: ["Andrej Ilić", "Rani Khedira", "Brenden Aaronson", "Kevin Volland"]
+    },
+    {
+      clues: ["ASEC Mimosas", "Hammarby", "Hoffenheim"],
+      answer: "Bazoumana Touré",
+      options: ["Tim Lemperle", "Adam Hložek", "Bazoumana Touré", "Gift Orban"]
+    },
+    {
+      clues: ["KV Ostende","Bologne FC","Stade Rennais", "Eintracht Frankfurt"],
+      answer: "Arthur Theate",
+      options: ["Michy Batshuayi",  "Arnaud Kalimuendo", "Rasmus Kristensen","Arthur Theate"]
+    },
+    {
+      clues: ["Praha", "Hoffenheim", "Bayer Leverkusen"],
+      answer: "Patrik Schick",
+      options: ["Borja Iglesias", "Patrik Schick", "Edmond Tapsoba", "Mateja Sarkić"]
+    },
+    {
+      clues: ["Eintracht Frankfurt"],
+      answer: "Farès Chaïbi",
+      options: ["Ibrahim Maza", "Farès Chaïbi", "Ellyes Skhiri", "Can Uzun"]
+    },
+    {
+      clues: ["Wolfsburg", "RB Leipzig"],
+      answer: "Ridle Baku",
+      options: ["Kevin Kampl", "Joël Veltman", "Ridle Baku", "Nuha Jatta"]
+    },
+    {
+      clues: ["Schalke 04", "RB Leipzig"],
+      answer: "Assan Ouédraogo",
+      options: ["Ridle Baku", "Assan Ouédraogo", "Nicolas Seiwald", "Christoph Baumgartner"]
     },
     {
       clues: ["VfB Stuttgart", "Burnley", "VfB Stuttgart"],
