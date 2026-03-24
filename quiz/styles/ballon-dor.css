@@ -1,0 +1,244 @@
+/* PAGE JOUEUR club */
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main#top {
+  flex: 1;
+  padding-right: 30px;
+  padding-left: 30px;
+  
+}
+
+.hero,
+.quiz-player-page {
+  width: min(100%, var(--content-max));
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
+}
+
+.quiz-player-page {
+  margin-bottom: 2rem;
+}
+
+.quiz-box {
+  background: rgba(0,0,0,0.45);
+  color: white;
+  border-radius: 1.4rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+}
+
+.quiz-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+#question-title {
+  margin-bottom: 0.8rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+
+.answers-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(12rem, 1fr));
+  gap: 0.9rem;
+}
+
+.answer-btn {
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem;
+  background: rgba(255,255,255,0.08);
+  color: white;
+  font-weight: 700;
+  cursor: pointer; /* avoir le doigt quand on passe sur le bouton */
+  transition: 0.2s;
+}
+
+.answer-btn:hover:not(:disabled) {
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-0.08rem);
+}
+
+.answer-btn:disabled {
+  cursor: default;
+  opacity: 0.95;
+}
+
+.answer-btn.correct {
+  background: rgba(46, 204, 113, 0.35);
+}
+
+.answer-btn.wrong {
+  background: rgba(231, 76, 60, 0.35);
+}
+
+.quiz-actions {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.quiz-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 0.9rem 1.2rem;
+  background: #27ae60;
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.quiz-btn:hover:not(:disabled) {
+  background: #1e8449;
+}
+
+.quiz-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.link-btn {
+  display: inline-block;
+  
+}
+
+.feedback {
+  margin-top: 1rem;
+  font-weight: 700;
+  min-height: 1.5rem;
+}
+
+.result-box {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  main#top {
+    padding-left: calc(var(--sidebar-closed) + 0.5rem);
+    padding-right: 0.5rem;
+  }
+
+  .answers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quiz-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #question-title {
+    font-size: 1.6rem;
+  }
+}
+
+
+ /*======================================================DESIGN RESULTBOX======================================================================== */
+.result-box {
+  position: relative;
+  min-height: 420px;
+  padding: 2.5rem 2.5rem 6rem;
+  text-align: center;
+  color: white;
+}
+
+.result-box h2 {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.result-box p {
+  margin: 5rem auto 0;
+  font-size: 2rem;
+  font-weight: 500;
+  max-width: 900px;
+  line-height: 1.4;
+}
+
+.result-box strong {
+  font-weight: 800;
+}
+
+/*
+Ce bloc sert à placer les boutons de résultat en bas et au centre de la result-box.
+
+Explication des propriétés :
+
+position: absolute;
+→ sort .result-actions du flux normal de la page
+→ permet de le placer précisément à l’intérieur de .result-box
+→ cela ne marche correctement que si le parent (.result-box) est en position: relative
+
+bottom: 2.5rem;
+→ place le bloc à 2.5rem du bas de la result-box
+
+left: 50%;
+→ place le bord gauche du bloc au milieu horizontal du parent
+
+transform: translateX(-50%);
+→ décale ensuite le bloc vers la gauche de 50% de SA propre largeur
+→ cela permet de le centrer parfaitement
+
+Pourquoi on utilise left: 50% + translateX(-50%) ?
+Exemple :
+- si le parent fait 1000px de large
+- left: 50% place le bord gauche du bloc à 500px
+- donc le bloc commence au milieu, il n’est pas centré
+- translateX(-50%) le recule de la moitié de sa propre largeur
+- au final, son centre tombe exactement au centre du parent
+
+display: flex;
+→ met les boutons sur une même ligne
+
+justify-content: center;
+→ centre les boutons dans le bloc flex
+
+gap: 1.5rem;
+→ ajoute un espace propre entre les deux boutons
+
+.result-actions .quiz-btn {
+  min-width: 180px;
+}
+→ force les boutons à avoir au moins la même largeur
+→ évite qu’un bouton soit beaucoup plus petit que l’autre
+*/
+
+.result-actions {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.result-actions .quiz-btn {
+  min-width: 180px;
+  text-align: center;
+}
+

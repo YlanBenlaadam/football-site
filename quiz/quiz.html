@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>SoccerPlay - Quiz</title>
+  <link rel="stylesheet" href="../styles/index.css" />
+  <link rel="stylesheet" href="styles/quiz.css">
+  
+</head>
+
+<body>
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="header-container">
+      <div id="logo">⚽ SoccerPlay</div>
+
+      <nav>
+        <ul>
+          <li><a href="../index.html#top">Accueil</a></li>
+          <li><a href="./quiz.html">Nos Quiz</a></li>
+          <li><a href="../index.html#jeux">Jeux Vidéo</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO (optionnel mais propre) -->
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>🏆 Tous les Quiz</h1>
+        <p>Choisis un thème, ou lance la sélection du jour.</p>
+      </div>
+    </section>
+
+    <!-- LAYOUT : sidebar gauche + contenu -->
+    <section class="quiz-app">
+
+<aside class="side-left">
+  <nav class="side-nav">
+    <a class="side-item" href="#theme-bdor">
+      <span class="side-icon">🏅</span>
+      <span class="side-text">Ballon d’Or</span>
+    </a>
+
+    <a class="side-item" href="#theme-club">
+      <span class="side-icon">🏟️</span>
+      <span class="side-text">club</span>
+    </a>
+
+    <a class="side-item" href="#theme-joueur">
+      <span class="side-icon">⚽</span>
+      <span class="side-text">Joueur</span>
+    </a>
+  </nav>
+</aside>
+
+      <!-- CONTENU CENTRAL -->
+      <div class="center">
+
+        <!-- SELECTION DU JOUR (grosse carte) -->
+        <section class="daily" id="daily-section">
+          <div class="daily-head" >
+            <h2>🔥 Sélection du jour</h2>
+
+          </div>
+
+          <a class="daily-card" href="">
+          </a>
+        </section>
+
+        <!-- BLOCS PAR THEME -->
+
+        <section class="theme-block" id="theme-bdor">
+          <div class="theme-head">
+            <h3>🏅 Devine le ballon d’Or a partir des éléments de la question</h3>
+            <p class="theme-more" data-theme="ballon-dor">Voir plus</p>
+            
+          </div>
+
+          <div class="theme-grid">
+            <a class="quiz-tile" href="./ballon-dor.html?niveau=facile">Facile</a>
+            <a class="quiz-tile" href="./ballon-dor.html?niveau=moyen">Moyen</a>
+            <a class="quiz-tile" href="./ballon-dor.html?niveau=difficile">Difficile</a>
+          </div>
+        </section>
+
+        <section class="theme-block" id="theme-club">
+          <div class="theme-head">
+            <h3>🏟️ Devine le club a partir des indices présents dans la question </h3>
+            <p class="theme-more" data-theme="club">Voir plus</p>
+          </div>
+
+          <div class="theme-grid">
+            <a class="quiz-tile" href="./club.html?niveau=facile">Facile</a>
+            <a class="quiz-tile" href="./club.html?niveau=moyen">Moyen</a>
+            <a class="quiz-tile" href="./club.html?niveau=difficile">Difficile</a>
+          </div>
+        </section>
+
+        <section class="theme-block" id="theme-joueur">
+          <div class="theme-head">
+            <h3>⚽ Devine le joueur a partir de sa carriere  </h3>
+            <p class="theme-more" data-theme="joueur">Voir plus</p>
+
+          </div>
+
+          <div class="theme-grid">
+            <a class="quiz-tile" href="./joueur.html?niveau=facile"> Facile</a>
+            <a class="quiz-tile" href="./joueur.html?niveau=moyen"> Moyen</a>
+            <a class="quiz-tile" href="./joueur.html?niveau=difficile">Difficile</a>
+            
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 SoccerPlay - Tous droits réservés</p>
+    <div class="footer-links">
+      <a href="../contact.html">Contact</a>
+      <a href="../bug.html">Signaler un bug</a>
+    </div>
+  </footer>
+  <div id="quiz-modal" class="quiz-modal hidden">
+  <div class="quiz-modal-overlay"></div>
+
+  <div class="quiz-modal-box">
+    <button id="quiz-modal-close" class="quiz-modal-close" type="button">✕</button>
+    <div id="quiz-modal-content">
+      <h2 id="quiz-modal-title">Titre</h2>
+      <p id="quiz-modal-text">Description</p>
+      <div class="quiz-modal-infos">
+        <div class="quiz-modal-info">
+          <span>🎯</span>
+          <p id="quiz-modal-type">Type</p>
+        </div>
+
+        <div class="quiz-modal-info">
+          <span>📈</span>
+          <p id="quiz-modal-levels">3 niveaux</p>
+        </div>
+
+        <div class="quiz-modal-info">
+          <span>⚡</span>
+          <p id="quiz-modal-format">5 questions</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="./javascript/quiz.js"></script>
+
+
+</body>
+</html>

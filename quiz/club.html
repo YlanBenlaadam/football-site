@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Quizz club de foot </title>
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="./styles/club.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="header-container">
+            <div id="logo">⚽ SoccerPlay</div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html#top"> Accueil</a></li>
+                    <li><a href="./quiz.html">Nos Quiz</a></li>
+                    <li><a href="../index.html#jeux">Jeux Vidéo</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="top">
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>🏟️ Devine le club</h1>
+        <p id="niveau-label">Chargement du niveau...</p>
+      </div>
+    </section>
+
+    <section class="quiz-player-page">
+      <div class="quiz-box">
+        <div id="quiz-content">
+                <div class="quiz-top">
+                    <div class="quiz-progress">
+                            Question <span id="question-number">1</span> / <span id="total-questions">5</span>
+                    </div>
+                    <div class="quiz-score">
+                         Score : <span id="score">0</span>
+                    </div>
+                </div>
+                <h2 id="question-title">Chargement...</h2>
+                <div id="answers" class="answers-grid"></div>
+                <div class="quiz-actions">
+                    <button id="next-btn" class="quiz-btn" disabled>Question suivante</button>
+                </div>
+                <p id="feedback" class="feedback"></p>
+          </div>
+
+        <div id="result-box" class="result-box hidden">
+          <h2>Quiz terminé 🎉</h2>
+          <p>Ton score final est : <strong><span id="final-score">0</span></strong></p>
+          <div class="result-actions">
+                <a class="quiz-btn link-btn" href="./quiz.html">Retour aux quiz</a>
+                <button id="replay-btn" class="quiz-btn" type="button">Rejouer</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 SoccerPlay - Tous droits réservés</p>
+    <div class="footer-links">
+      <a href="../contact.html">Contact</a>
+      <a href="../bug.html">Signaler un bug</a>
+    </div>
+  </footer>
+
+  <script src="./javascript/club.js"></script>
+    
+</body>
+</html>

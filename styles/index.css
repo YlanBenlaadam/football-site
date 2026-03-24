@@ -1,0 +1,279 @@
+@charset "utf-8";
+
+/* RESET + BASE (anti espaces blancs + base propre) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* IMPORTANT : fond sur html ET body pour éviter le blanc au scroll/overscroll */
+html, body {
+  height: 100%;
+  background: linear-gradient(90deg, #2ecc71 50%, #27ae60 50%);
+  background-size: 80px 100%;
+}
+
+
+
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.6;
+
+}
+
+/* ===================== TOPBAR (header sticky) ===================== */
+.topbar {
+  background-color: #1a1a1a;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.header-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+#logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  align-items: center;
+
+}
+
+/* NAV */
+nav ul {
+  list-style: none;          /* enlève les puces */
+  display: flex;             /* menu en ligne */
+  gap: 24px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+nav a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* ===================== HERO ===================== */
+.hero {
+  width: 90%;
+  max-width: 1200px;
+  margin: 2rem auto 0;
+
+  background: rgba(0,0,0,0.45);/* transpaarent */
+  color: white;
+  border-radius: 22px;
+  padding: 3rem 1.5rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.hero-inner {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;/*permet d'empiler les éléments */
+}
+
+.hero-inner h1 {
+  margin: 0;                 /* IMPORTANT : évite l’espace bizarre en haut */
+  font-size: 2.6rem;
+}
+
+.hero-inner p {
+  margin-top: 0.8rem;
+  opacity: 0.95;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.3rem;
+}
+
+/* Boutons du hero */
+.btn {
+  display: inline-block;
+  background: transparent;
+  color: white;
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: 0.25s;
+  border: 2px solid #2ecc71;
+}
+.btn:hover {
+  background: #1e8449;
+  transform: translateY(-2px);
+}
+
+/* ===================== SECTIONS QUIZ / JEUX ===================== */
+.game-section {
+  width: 95%;
+  max-width: 1400px;
+  margin: 3rem auto 0;
+}
+
+.game-section h2 {
+  color: white;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+/* container centré */
+.banner-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* bannière principale */
+.banner {
+  width: 90%;
+  max-width: 1200px;
+
+  min-height: 220px;
+
+  border-radius: 25px;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* contenu centré */
+.banner-content {
+  text-align: center;
+  color: white;
+}
+
+.banner-content h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.banner-content p {
+  opacity: 0.9;
+  margin-bottom: 15px;
+}
+
+.banner:hover {
+  transform: translateY(10px);/* quand on passe la souris sur les divs elle se decale un peu vers le bas */
+  box-shadow: 0 15px 40px rgba(0,0,0,0.35);/* 0.35 permet d'avoir des div transparentes */
+}
+
+
+.banner-quiz{
+  background-color: rgba(0,0,0,0.45);
+}
+
+.banner-games{
+background-color: rgba(0,0,0,0.45);
+}
+
+
+
+
+article {
+  background: rgba(255,255,255,0.90);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  text-align: center;
+  min-height: 180 px ;
+}
+
+article h3 {
+  font-size: 1.6rem;
+  margin-bottom: 14px;
+}
+
+
+
+/* ===================== FOOTER (différence nette avec main) ===================== */
+footer {
+  margin-top: 3rem;
+  padding: 22px 0;
+  background: #1a1a1a;
+  color: white;
+  text-align: center;
+  box-shadow: 0 -6px 18px rgba(0,0,0,0.25);
+
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color:white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 600;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 650px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+
+  .hero-inner h1 {
+    font-size: 2rem;
+  }
+}
+
+/* on vise ici le plus haut niveau de la page <html> (donc variable declarer ici dispo partout dans la pge)
+   ex : contentmax utiliser par -> quizz.css 
+   sidebar-open -> cree la variable sidebar-open a : 220 px 
+   sidebar-closed -> cree la variable sidebar-Closed a 70 px 
+   cotnent-max -> IDEM
+   page-gap -> IDEM
+   var(nomVariable) -> recupere le contenu de la variable declarer 
+*/
+:root {
+  --sidebar-closed: 70px;
+  --sidebar-open: 220px;
+  --content-max: 110rem;
+  --page-gap: 20px;
+}
+
