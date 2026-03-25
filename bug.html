@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoccerPlay - Bug</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/bug.css">
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="header-container">
+            <div id="logo">⚽ SoccerPlay</div>
+            <nav>
+                <ul>
+                    <li><a href="./index.html#top">Accueil</a></li>
+                    <li><a href="./quiz/quiz.html">Nos Quiz</a></li>
+                    <li><a href="./index.html#jeux">Jeux Vidéo</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="top">
+    
+        <section class="hero">
+            <div class="hero-inner">
+                <h1>⚠️ Signaler un bug</h1>
+                <p>Un bug a signaler sur le site, remplissez le formulaire ci-dessous !</p>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <form action="https://formsubmit.co/ylanbenlaadammailpro@gmail.com" method="POST" class="bug-form"></form>
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="https://ylanbenlaadam.github.io/football-site/contact.html" />
+            <input type="hidden" name="_subject" value="Nouveau message SoccerPlay" />
+
+            <label for="name">Ton pseudo</label>
+            <input type="text" id="name" name="name" placeholder="Ex : Zidane10" required />
+
+            <label for="email">Ton e-mail</label>
+            <input type="email" id="email" name="email" placeholder="ton@email.com" required />
+
+            <label for="subject">Sujet</label>
+            <select name="subject" id="subject" required>
+                <option value="Accueil">Page d'acceuil</option>
+                <option value="Quiz-Bdor">Quiz ballon d'or</option>
+                <option value="Quiz-Club">Quiz club</option>
+                <option value="Jeux">Jeux</option>
+                <option value="autre">Autre</option>
+            </select>
+
+            <label for="message">Ton message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Écris ton message ici..." required></textarea>
+
+            <button type="submit" class="btn-submit">Envoyer le message ⚽</button>
+        </section>
+    
+</body>
+</html>

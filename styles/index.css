@@ -41,8 +41,8 @@ body {
   margin: 0 auto;
 
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-between; /* space beetween place les 2 elements aux extremités */
+  align-items: center; /* aligne verticalement (pas coller en haut) les  2 elements aux extremités */
   gap: 16px;
 }
 
