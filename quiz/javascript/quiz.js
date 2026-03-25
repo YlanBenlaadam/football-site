@@ -203,7 +203,7 @@ function closeModal() {
 
 themeButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    const theme = button.dataset.theme;
+    const theme = button.dataset.theme; // lis la valeur sur le bouton en savoir plus donc le thème
     openModal(theme);
   });
 });

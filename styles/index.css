@@ -218,7 +218,126 @@ article h3 {
   margin-bottom: 14px;
 }
 
+/* ===================== POPUP INDEX ===================== */
 
+/* Conteneur plein écran, centré
+   position: fixed → reste en place même si on scroll
+   inset: 0 → raccourci pour top:0 right:0 bottom:0 left:0 (couvre tout l'écran)
+*/
+/* Texte "En savoir plus" sous les bannières
+   même style que .theme-more sur la page quiz
+*/
+.banner-more {
+  color: #2ecc71;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 0.8rem;
+  text-align: center;
+}
+
+.banner-more:hover {
+  text-decoration: underline;
+}
+
+.index-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* Quand la classe "hidden" est présente, la popup est invisible */
+.index-modal.hidden {
+  display: none;
+}
+
+/* Overlay = fond sombre cliquable pour fermer la popup
+   backdrop-filter: blur(4px) → floute le contenu derrière
+*/
+.index-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+/* Boîte de la popup
+   z-index: 1 → passe devant l'overlay (qui est à z-index auto = 0)
+   animation → la boîte monte légèrement en apparaissant
+*/
+.index-modal-box {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 620px);
+  background: rgba(0, 0, 0, 0.88);
+  color: white;
+  border: 1px solid rgba(46, 204, 113, 0.25);
+  border-radius: 1.8rem;
+  padding: 2rem 1.6rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  animation: indexModalFadeUp 0.22s ease;
+}
+
+/* Bouton fermer */
+.index-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.index-modal-close:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+#index-modal-title {
+  margin: 0 0 0.8rem;
+  font-size: 2rem;
+}
+
+#index-modal-text {
+  margin: 0;
+  line-height: 1.7;
+  opacity: 0.95;
+  white-space: pre-line;  /* les \n dans le JS créent de vrais sauts de ligne */
+}
+
+/* Animation : la popup monte de 14px en apparaissant
+   @keyframes = définit une animation étape par étape
+   from = état de départ, to = état final
+*/
+@keyframes indexModalFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive mobile */
+@media (max-width: 700px) {
+  .index-modal-box {
+    padding: 1.6rem 1rem;
+  }
+  #index-modal-title {
+    font-size: 1.6rem;
+  }
+}
 
 /* ===================== FOOTER ===================== */
 footer {
