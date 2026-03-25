@@ -1,0 +1,107 @@
+/* ===================== SECTION FORMULAIRE ===================== */
+
+/* Conteneur centré pour le formulaire
+   width: 90% → prend 90% de la largeur du parent
+   max-width: 700px → jamais plus de 700px même sur grand écran
+   margin: 2rem auto 0 → 2rem en haut, auto gauche/droite pour centrer le bloc, 0 en bas
+*/
+.form-section {
+  width: 90%;
+  max-width: 700px;
+  margin: 2rem auto 0;
+}
+
+/* Carte sombre du formulaire
+   display: flex + flex-direction: column → empile les enfants verticalement
+   gap → espace entre chaque enfant (remplace les margin-bottom)
+*/
+.contact-form {
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 22px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.contact-form label {
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Style commun pour inputs, select et textarea
+   border: 2px solid transparent → bordure invisible mais présente,
+   évite un saut de taille quand la bordure verte apparaît au focus
+   font-family: inherit → hérite la police du body (sinon les inputs ont leur propre police)
+   transition → animation douce quand la bordure change de couleur
+*/
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  padding: 12px 16px;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  transition: border-color 0.25s;
+}
+
+/* :focus = pseudo-classe qui s'active quand tu cliques dans un champ.
+   outline: none → enlève le contour bleu par défaut du navigateur
+   border-color → la bordure transparente devient verte
+*/
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #2ecc71;
+}
+
+/* Textarea redimensionnable uniquement en hauteur (pas en largeur) */
+.contact-form textarea {
+  resize: vertical;
+}
+
+/* Bouton envoyer
+   align-self: center → centre uniquement ce bouton dans le flex column (les autres restent à gauche)
+   border-radius: 999px → ovale parfait peu importe la taille du bouton
+   cursor: pointer → la souris devient une main au survol
+   transition → anime le fond ET le déplacement
+*/
+.btn-submit {
+  align-self: center;
+  margin-top: 1rem;
+  padding: 14px 32px;
+  border: 2px solid #2ecc71;
+  border-radius: 999px;
+  background: transparent;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.2s;
+}
+
+/* transform: translateY(-2px) → remonte de 2px (effet flottant) */
+.btn-submit:hover {
+  background: #1e8449;
+  transform: translateY(-2px);
+}
+
+/* ===================== RESPONSIVE ===================== */
+/* Si l'écran fait 650px ou moins (mobile) */
+@media (max-width: 650px) {
+  .contact-form {
+    padding: 1.5rem 1rem;
+  }
+
+  /* Le bouton prend toute la largeur (plus facile à cliquer au pouce) */
+  .btn-submit {
+    width: 100%;
+  }
+}
