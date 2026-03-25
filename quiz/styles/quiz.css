@@ -1,7 +1,7 @@
 /* PAGE QUIZ : catalogue des quiz */
 
 main#top {
-  padding-left: 90px;
+  padding-left: 70px;
   padding-right: 20px;
 }
 
@@ -35,19 +35,19 @@ main#top {
 
 /* SIDEBAR FIXE */
 .side-left {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: var(--sidebar-closed);
+  position: fixed;        /* fixée = ne bouge pas quand on scroll */
+  top: 0;                 /* collée en haut */
+  left: 0;                /* collée à gauche */
+  height: 100vh;          /* 100vh = 100% de la hauteur de la fenêtre du navigateur */
+  width: var(--sidebar-closed);  /* 50px (variable définie dans :root) */
   background: rgba(0,0,0,0.55);
-  padding: 5.5rem 0.6rem 1rem;
+  padding: 5.5rem 0 1rem; /* 5.5rem en haut (pour pas cacher sous la topbar), 0 sur les côtés, 1rem en bas */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  overflow: hidden;
-  transition: width 0.25s ease;
-  z-index: 1000;
+  align-items: center;    /* centre les enfants horizontalement dans la sidebar */
+  overflow: hidden;        /* cache tout ce qui dépasse (le texte quand la sidebar est fermée) */
+  transition: width 0.25s ease;  /* animation douce quand la largeur change */
+  z-index: 1000;           /* passe au-dessus du contenu de la page (plus le chiffre est grand, plus c'est devant) */
 }
 
 .side-left:hover {
@@ -59,14 +59,20 @@ main#top {
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
+  
 }
 
+/* Chaque lien de la sidebar
+   justify-content: center → centre l'icône horizontalement quand la sidebar est fermée
+   white-space: nowrap → empêche le texte de revenir à la ligne
+*/
 .side-item {
   display: flex;
   align-items: center;
   gap: 0.9rem;
   width: 100%;
-  padding: 0.85rem 0.7rem;
+  padding: 0.85rem 0;
+  justify-content: center;
   border-radius: 0.9rem;
   text-decoration: none;
   color: white;
@@ -74,11 +80,13 @@ main#top {
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
+/* translateX = décale horizontalement (comme translateY mais sur l'axe X) */
 .side-item:hover {
   background: rgba(255,255,255,0.08);
   transform: translateX(0.2rem);
 }
 
+/* min-width → largeur minimum fixe pour que l'icône ne rétrécisse jamais */
 .side-icon {
   width: 1.8rem;
   min-width: 1.8rem;
@@ -87,15 +95,25 @@ main#top {
   line-height: 1;
 }
 
+
+/* display: none → le texte est complètement retiré du DOM visuel
+   contrairement à opacity: 0 qui le rend invisible MAIS il prend encore de la place
+*/
 .side-text {
-  opacity: 0;
-  transition: opacity 0.15s ease;
+  display: none;
   font-weight: 700;
   color: #2ecc71;
 }
 
+/* Au hover de la sidebar : le texte réapparaît */
 .side-left:hover .side-text {
-  opacity: 1;
+  display: inline;
+}
+
+/* Quand la sidebar est ouverte, on aligne à gauche avec du padding */
+.side-left:hover .side-item {
+  justify-content: flex-start;
+  padding: 0.85rem 0.7rem;
 }
 
 /* SELECTION DU JOUR */
@@ -223,10 +241,11 @@ main#top {
   gap: 0.75rem;
 }
 
+/* quand on clique sur un des logos, sa s'arrete 80 px pour pas etre ecraser par le header */
 #theme-bdor,
 #theme-club,
 #theme-joueur {
-  scroll-margin-top: 300px;
+  scroll-margin-top: 80px;
 }
 
 .quiz-tile {

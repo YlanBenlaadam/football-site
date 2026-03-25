@@ -39,7 +39,6 @@ body {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-
   display: flex;
   justify-content: space-between; /* space beetween place les 2 elements aux extremités */
   align-items: center; /* aligne verticalement (pas coller en haut) les  2 elements aux extremités */
@@ -54,6 +53,8 @@ body {
 
 }
 
+
+
 /* NAV */
 nav ul {
   list-style: none;          /* enlève les puces */
@@ -64,13 +65,14 @@ nav ul {
 nav a {
   color: white;
   text-decoration: none;
-  font-weight: 700;
-  opacity: 0.9;
+  font-weight: 600;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.25s;
 }
 
 nav a:hover {
-  opacity: 1;
-  text-decoration: underline;
+  border-color: #2ecc71;
 }
 
 /* ===================== HERO ===================== */
@@ -280,3 +282,12 @@ footer {
 }
 
 
+/* Variables globales accessibles partout dans le site
+   On les utilise avec var(--nomVariable) dans n'importe quel fichier CSS
+*/
+:root {
+  --sidebar-closed: 50px;    /* largeur sidebar fermée (réduit de 70px à 50px) */
+  --sidebar-open: 220px;     /* largeur sidebar au hover */
+  --content-max: 110rem;     /* largeur max du contenu central */
+  --page-gap: 20px;
+}
