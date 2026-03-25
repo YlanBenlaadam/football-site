@@ -218,62 +218,65 @@ article h3 {
 
 
 
-/* ===================== FOOTER (différence nette avec main) ===================== */
+/* ===================== FOOTER ===================== */
 footer {
   margin-top: 3rem;
-  padding: 22px 0;
+  padding: 2rem 0;
   background: #1a1a1a;
   color: white;
-  text-align: center;
-  box-shadow: 0 -6px 18px rgba(0,0,0,0.25);
+  box-shadow: 0 -6px 18px rgba(0, 0, 0, 0.25);
+}
 
+/* Conteneur flex : même principe que header-container
+   justify-content: space-between → copyright à gauche, liens à droite
+   flex-wrap: wrap → si pas assez de place, les éléments passent à la ligne
+*/
+.footer-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* opacity: 0.8 → rend le texte légèrement transparent (1 = opaque, 0 = invisible) */
+.footer-container p {
+  opacity: 0.8;
+  font-size: 0.95rem;
 }
 
 .footer-links {
-  margin-top: 10px;
+  display: flex;
+  gap: 1.5rem;
 }
 
-.footer-links a {
-  color:white;
-  text-decoration: none;
-  margin: 0 10px;
-  font-weight: 600;
-}
-
-.footer-links a:hover {
-  text-decoration: underline;
-}
-
-/* ===================== RESPONSIVE ===================== */
-@media (max-width: 650px) {
-  .header-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav ul {
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-
-  .hero-inner h1 {
-    font-size: 2rem;
-  }
-}
-
-/* on vise ici le plus haut niveau de la page <html> (donc variable declarer ici dispo partout dans la pge)
-   ex : contentmax utiliser par -> quizz.css 
-   sidebar-open -> cree la variable sidebar-open a : 220 px 
-   sidebar-closed -> cree la variable sidebar-Closed a 70 px 
-   cotnent-max -> IDEM
-   page-gap -> IDEM
-   var(nomVariable) -> recupere le contenu de la variable declarer 
+/* border-bottom: 2px solid transparent → trait invisible sous le lien,
+   prêt à devenir vert au hover (même technique que border sur les inputs)
+   padding-bottom → petit espace entre le texte et le trait
 */
-:root {
-  --sidebar-closed: 70px;
-  --sidebar-open: 220px;
-  --content-max: 110rem;
-  --page-gap: 20px;
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.25s;
 }
+
+/* Au survol le trait invisible devient vert */
+.footer-links a:hover {
+  border-color: #2ecc71;
+}
+
+/* En mobile, on empile tout au centre au lieu de gauche/droite */
+@media (max-width: 650px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
 

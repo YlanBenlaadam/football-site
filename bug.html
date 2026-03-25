@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,31 +32,52 @@
         </section>
 
         <section class="form-section">
-            <form action="https://formsubmit.co/ylanbenlaadammailpro@gmail.com" method="POST" class="bug-form"></form>
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value="https://ylanbenlaadam.github.io/football-site/contact.html" />
-            <input type="hidden" name="_subject" value="Nouveau message SoccerPlay" />
+            <!-- Ouverture du form : tout ce qui est dedans sera envoyé par POST à FormSubmit -->
+            <form action="https://formsubmit.co/ylanbenlaadammailpro@gmail.com" method="POST" class="bug-form">
 
-            <label for="name">Ton pseudo</label>
-            <input type="text" id="name" name="name" placeholder="Ex : Zidane10" required />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_next" value="https://ylanbenlaadam.github.io/football-site/bug.html" />
+                <input type="hidden" name="_subject" value="Bug SoccerPlay" />
 
-            <label for="email">Ton e-mail</label>
-            <input type="email" id="email" name="email" placeholder="ton@email.com" required />
+                <label for="name">Ton pseudo</label>
+                <input type="text" id="name" name="name" placeholder="Ex : Zidane10" required />
 
-            <label for="subject">Sujet</label>
-            <select name="subject" id="subject" required>
-                <option value="Accueil">Page d'acceuil</option>
-                <option value="Quiz-Bdor">Quiz ballon d'or</option>
-                <option value="Quiz-Club">Quiz club</option>
-                <option value="Jeux">Jeux</option>
-                <option value="autre">Autre</option>
-            </select>
+                <label for="email">Ton e-mail</label>
+                <input type="email" id="email" name="email" placeholder="ton@email.com" required />
 
-            <label for="message">Ton message</label>
-            <textarea id="message" name="message" rows="6" placeholder="Écris ton message ici..." required></textarea>
+                <label for="subject">Page concernée</label>
+                <select name="subject" id="subject" required>
+                    <option value="" disabled selected>Choisis une page</option>
+                    <option value="Accueil">Page d'accueil</option>
+                    <option value="Quiz-Bdor">Quiz ballon d'or</option>
+                    <option value="Quiz-Club">Quiz club</option>
+                    <option value="Quiz-Joueur">Quiz joueur</option>
+                    <option value="Jeux">Jeux</option>
+                    <option value="autre">Autre</option>
+                </select>
 
-            <button type="submit" class="btn-submit">Envoyer le message ⚽</button>
+                <label for="message">Décris le bug</label>
+                <textarea id="message" name="message" rows="6" placeholder="Décris le problème rencontré..." required></textarea>
+
+                <button type="submit" class="btn-submit">Envoyer le signalement ⚽</button>
+
+            <!-- Fermeture du form ICI, après tous les champs -->
+            </form>
         </section>
-    
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+    <div class="footer-container">
+        <p>© 2026 SoccerPlay - Tous droits réservés</p>
+        <div class="footer-links">
+            <a href="./contact.html">Nous contacter</a>
+            <a href="./bug.html">Signaler un bug</a>
+        </div>
+    </div>
+</footer>
+
+
 </body>
 </html>
