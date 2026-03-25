@@ -281,6 +281,31 @@ footer {
   }
 }
 
+/* Conteneur des logos réseaux sociaux */
+.logo-container {
+  display: flex;
+  gap: 1rem;              /* espace entre chaque logo */
+  align-items: center;
+}
+
+/* Les images des logos : taille fixe + coins arrondis
+   object-fit: cover → l'image remplit le carré sans se déformer (elle se recadre)
+   cursor: pointer → main au survol pour montrer que c'est cliquable
+*/
+.logo-container img {
+  width: 35px;
+  height: 35px;
+  border-radius: 8px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+/* Petit effet zoom au survol */
+.logo-container img:hover {
+  transform: scale(1.15);   /* scale = agrandit l'élément (1.15 = 115% de sa taille) */
+}
+
 
 /* Variables globales accessibles partout dans le site
    On les utilise avec var(--nomVariable) dans n'importe quel fichier CSS
