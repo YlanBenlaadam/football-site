@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FootAddict - Jouer</title>
+    <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="styles/play.css" />
+</head>
+<!-- Cette page va etre celle qui sera appeller quand un jeu sera cliquer-->
+<body>
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+        <div class="header-container">
+            <div id="logo">⚽ FootAddict</div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html#top">Accueil</a></li>
+                    <li><a href="../quiz/quiz.html">Nos Quiz</a></li>
+                    <li><a href="./jeux.html">Jeux Vidéo</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="top">
+
+        <!-- Bouton retour -->
+        <a href="./jeux.html" class="back-btn">← Retour aux jeux</a>
+        <button id="fullscreen-btn" class="fullscreen-btn" >⛶</button>
+
+        <!-- L'iframe du jeu (le src est rempli par le JS) -->
+        <div class="game-frame-container">
+            <iframe id="game-frame" src="" allowfullscreen></iframe> <!--allowFullScreen permet l'affichage en pleine ecran dans la frame-->
+        </div>
+
+        <!-- Carte infos du jeu (remplie par le JS) -->
+        <div class="game-info-card">
+            <h2 id="game-title">Chargement...</h2>
+            <p id="game-description"></p>
+            <div class="game-details">
+                <div class="game-detail">
+                    <span>🎮</span>
+                    <p id="game-controls"></p>
+                </div>
+                <div class="game-detail">
+                    <span>📱</span>
+                    <p id="game-compatible"></p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <p>© 2026 FootAddict - Tous droits réservés</p>
+            <div class="logo-container">
+                <a href="https://x.com/FootAddicttt">
+                    <img src="../images/twitter-logo.png" alt="Twitter">
+                </a>
+                <a href="https://www.instagram.com/foot_addictt/">
+                    <img src="../images/insta-logo.png" alt="Instagram">
+                </a>
+                <a href="https://discord.gg/RyQT8xwV">
+                    <img src="../images/discord-logo.png" alt="Discord">
+                </a>
+            </div>
+            <div class="footer-links">
+                <a href="../contact.html">Nous contacter</a>
+                <a href="../bug.html">Signaler un bug</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- On charge jeux.js d'abord (contient le tableau) puis play.js (lit l'URL et affiche le jeu) -->
+    <script src="javascript/jeux.js"></script>
+    <script src="javascript/play.js"></script>
+
+</body>
+</html>

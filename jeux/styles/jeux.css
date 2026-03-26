@@ -1,0 +1,94 @@
+/* ===================== SECTION GRILLE DE JEUX ===================== */
+
+/* NIVEAU 1 : La section qui contient tout (le plus grand conteneur)
+   Hiérarchie : .games-section > .games-card > .games-grid > .game-card
+*/
+.games-section {
+    width: 95%;
+    max-width: 1500px;
+    margin: 2rem auto 0;
+}
+
+/* NIVEAU 2 : La grande carte sombre (fond noir arrondi)
+   C'est le cadre visuel qui entoure toute la grille
+*/
+.games-card {
+    background: rgba(0, 0, 0, 0.45);
+    border-radius: 22px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* NIVEAU 3 : Le conteneur de la grille
+   C'est lui qui organise les cartes en lignes/colonnes
+   On passe de grid à flexbox comme Chibasko :
+   - flex-wrap: wrap → les cartes passent à la ligne quand ya plus de place
+   - justify-content: center → les cartes orphelines sont centrées
+*/
+.games-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+/* NIVEAU 4 : Chaque petite carte de jeu (image + nom)
+   width: 220px → largeur fixe, le navigateur calcule combien en rentrent par ligne
+   Ajuste cette valeur pour plus ou moins de colonnes
+*/
+.game-card {
+    background: transparent;
+    cursor: pointer;
+    width: 220px;
+    transition: transform 0.2s;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+}
+
+/* L'image dans chaque carte
+   aspect-ratio: 1 → force un carré
+   object-fit: cover → remplit le carré sans déformer l'image
+   border-radius: 16px → coins arrondis sur l'image uniquement
+*/
+.game-card img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    display: block;
+    border-radius: 16px;
+}
+
+/* Le nom du jeu sous l'image */
+.game-card-name {
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    padding: 0.8rem 0.5rem;
+    font-size: 0.95rem;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 500px) {
+    .games-card {
+        padding: 1rem;
+    }
+
+    /* Sur mobile on force 2 cartes par ligne
+       On repasse en grid car avec flexbox + width fixe
+       les cartes ne s'adapteraient pas bien sur petit écran
+    */
+    .games-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    /* En grid les cartes prennent la largeur de leur colonne,
+       donc on enlève le width fixe
+    */
+    .game-card {
+        width: auto;
+    }
+}
