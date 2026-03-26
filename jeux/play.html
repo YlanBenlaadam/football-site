@@ -25,15 +25,17 @@
     </header>
 
     <main id="top">
-
-        <!-- Bouton retour -->
-        <a href="./jeux.html" class="back-btn">← Retour aux jeux</a>
-        <button id="fullscreen-btn" class="fullscreen-btn" >⛶</button>
-
-        <!-- L'iframe du jeu (le src est rempli par le JS) -->
-        <div class="game-frame-container">
-            <iframe id="game-frame" src="" allowfullscreen></iframe> <!--allowFullScreen permet l'affichage en pleine ecran dans la frame-->
+        
+        <div class="game-wrapper">
+            <div class="play-toolbar">
+                <a href="./jeux.html" class="back-btn">← Retour aux jeux</a>
+                <button id="fullscreen-btn" class="fullscreen-btn">⛶ Plein écran</button>
+            </div>
+            <div id="game-frame-container" class="game-frame-container">
+                <iframe id="game-frame" src="" allowfullscreen></iframe>
+            </div>
         </div>
+
 
         <!-- Carte infos du jeu (remplie par le JS) -->
         <div class="game-info-card">

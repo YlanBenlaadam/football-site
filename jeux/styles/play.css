@@ -1,33 +1,67 @@
 /* ===================== PAGE DE JEU ===================== */
 
-/* Bouton retour aux jeux */
-.back-btn {
-    display: inline-block;
-    margin: 1.5rem 0 0 2rem;
-    color: #2ecc71;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1rem;
-    transition: opacity 0.2s;
-}
-
-.back-btn:hover {
-    opacity: 0.7;
-}
-
-/* Conteneur de l'iframe
-   aspect-ratio: 16/9 → force le ratio 16:9 (comme un écran de télé)
-   L'iframe prend 100% de ce conteneur
-*/
-.game-frame-container {
+/* Barre au-dessus du jeu : retour à gauche, plein écran à droite */
+/* Bloc qui regroupe la toolbar + l'iframe en un seul élément visuel */
+.game-wrapper {
     width: 90%;
     max-width: 1100px;
     margin: 1.5rem auto 0;
-    aspect-ratio: 16 / 9;
     border-radius: 18px;
-    overflow: hidden;
+    overflow: hidden;              /* les coins arrondis s'appliquent à tout le bloc, car les enants donc la iframe et la top bar ne peuvent plus depasser */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
+
+/* Le chapeau : même fond sombre que l'iframe */
+.play-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 0.8rem 1.2rem;
+    /* pas de margin ni de border-radius, le wrapper gère tout */
+}
+
+/* L'iframe n'a plus besoin de son propre border-radius ni margin */
+.game-frame-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    /* plus de border-radius, margin ni box-shadow ici, c'est le wrapper qui gère */
+}
+
+
+/* Fond sombre sur le bouton retour pour qu'il soit lisible sur le vert */
+.back-btn {
+    background: rgba(0, 0, 0, 0.0) ;
+    border: 2px solid #2ecc71;
+    color: white;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 10px 20px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.back-btn:hover{
+    background: #1e8449;
+}
+/* Style du bouton plein écran */
+.fullscreen-btn {
+    background: rgba(0, 0, 0, 0) ;
+    border: 2px solid #2ecc71;
+    color: white;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 10px 20px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.fullscreen-btn:hover {
+    background: #1e8449;
+}
+
 
 .game-frame-container iframe {
     width: 100%;
