@@ -1,138 +1,126 @@
-// ===================== TABLEAU DES JEUX =====================
+// ===================== TABLEAU DES JEUX (GameMonetize) =====================
 // Chaque objet contient les infos d'un jeu
 // Ce tableau est utilisé par jeux.html (grille) ET play.html (iframe + infos)
 
-// URL de référence pour GameDistribution (ton domaine enregistré)
-const referrer = "?gd_sdk_referrer_url=https://ylanbenlaadam.github.io/football-site/jeux/jeux.html";
-
 const jeux = [
     {
-        nom: "Football Dual",
+        nom: "Soccer Duel",
         image: "images/football-dual.jpg",
-        iframe: "https://html5.gamedistribution.com/3c96c6a76dc94cedbe3d4bc519e0a7ce/" + referrer+"/games/{game-path}" ,
-        description: "Un jeu passionnant de type baby-foot, auquel vous pouvez jouer seul ou avec des amis sur le même appareil ou en réseau.",
-        instructions: "Utilisez la souris de votre ordinateur ou appuyez avec votre doigt sur votre appareil mobile pour contrôler les personnages sur le terrain.",
+        iframe: "https://html5.gamemonetize.co/cmu4j0nhxsgrh6dg4kkjgm0fmblfenzn/",
+        description: "Un jeu de football en duel où vous affrontez votre adversaire dans des matchs intenses.",
+        instructions: "Cliquez ou appuyez pour jouer.",
         compatible: "iOS - Android"
     },
     {
-        nom: "Super Football Fever",
-        image: "images/super-football-fever.jpg",
-        iframe: "https://games.construct.net/26420/latest",
-        description: "Une expérience de football d'un réalisme sans précédent grâce à des animations fluides et des graphismes 3D plus vrais que nature.",
-        instructions: "Utilisez le joystick virtuel pour contrôler les déplacements et les dribbles. Appuyez sur les boutons pour les passes et les tirs.",
-        compatible: "iOS - Android"
-    },
-    
-    {
-        nom: "Football Duel",
-        image: "images/football-duel.jpg",
-        iframe: "https://html5.gamedistribution.com/4a9c7ad53f7c48678b3b848390a62daa/" + referrer,
-        description: "Entrez dans l'arène de Football Duel ! Tour à tour tireur et gardien de but dans ce duel de tirs au but palpitant en 3D.",
-        instructions: "Balayez l'écran pour viser et tirer. En défense, balayez dans la direction de la balle pour bloquer le tir.",
+        nom: "Football Kick 3D",
+        image: "images/Football-Kick-3D.jpg",
+        iframe: "https://html5.gamemonetize.co/faldmlyi3o26ppqc18vmuvsd9dqierk2/",
+        description: "Football Kick 3D est un jeu de football 3D ultra-dynamique où il ne s'agit pas seulement de dribbler : il faut percer la défense adverse pour récupérer le ballon et marquer. Foncez vers l'avant, repoussez vos adversaires avec des tacles puissants, récupérez le ballon et progressez sur le terrain jusqu'au but.",
+        instructions: "Cliquez ou appuyez pour jouer.",
         compatible: "iOS - Android"
     },
     {
-        nom: "Head Soccer Arena",
-        image: "images/head-soccer-arena.jpg",
-        iframe: "https://html5.gamedistribution.com/4c6790dc7ba5480ba7c1b619bdefdd3f/" + referrer,
-        description: "Jouez des matchs à 2 joueurs, enchaînez les parties rapides ou gravissez les échelons des 15 ligues en mode Carrière.",
-        instructions: "1 joueur : Z/Q/D ou flèches pour se déplacer, espace pour tirer. 2 joueurs : Joueur gauche Z/Q/S/D + F, Joueur droit flèches + K.",
+        nom: "Ultra Kick Goal",
+        image: "images/Ultra Kick  Goal Crazy-512x384.jpg",
+        iframe: "https://html5.gamemonetize.co/v7efjrd0d2jfzgp3hswbtmi1wcn46yvu/",
+        description: "Ultra Kick, c'est l'expérience ultime des tirs au but ! Approchez-vous du point de penalty, analysez le gardien et visez la lucarne. Maîtrisez 4 types de tirs redoutables : normal, effet, surpuissant et le lob astucieux. Enchaînez les buts pour décrocher des bonus de triplé et affrontez 3 gardiens légendaires.",
+        instructions: "Visez avec le curseur, chargez votre puissance et tirez ! Enchaînez les buts pour obtenir des bonus, utilisez 4 types de tirs et battez des gardiens de but légendaires pour remporter la victoire !",
         compatible: "iOS - Android"
     },
     {
-        nom: "Gloves of Block",
-        image: "images/gloves-of-block.jpg",
-        iframe: "https://html5.gamedistribution.com/0b19cd47f87e4705a0e09b7eca9a5e90/" + referrer,
-        description: "Enfilez les gants du gardien de but de votre équipe nationale et menez votre nation à la gloire en Coupe du Monde !",
-        instructions: "Utilisez votre souris ou votre écran tactile pour déplacer les gants du gardien et intercepter le ballon.",
+        nom: "Soccer Simulator",
+        image: "images/SOCCER Simulator-512x384.jpg",
+        iframe: "https://html5.gamemonetize.co/5c001ed95x9q3h5vnv2d05tpptuqs0se/",
+        description: "SOCCER Simulator vous offre une expérience de football 3D palpitante ! Contrôlez le ballon, visez avec précision et marquez des buts spectaculaires ! Testez vos compétences, améliorez votre précision et devenez un champion de football dans ce jeu de simulation réaliste et amusant.",
+        instructions: "Cliquez ou appuyez pour jouer.",
         compatible: "iOS - Android"
     },
     {
-        nom: "Authentic Football",
-        image: "images/authentique-football.jpg",
-        iframe: "https://html5.gamedistribution.com/3e23038b06ea4d39b882713fe059e595/" + referrer,
-        description: "La technologie de modélisation 3D est utilisée pour construire un terrain de football plus vrai que nature avec des animations fluides.",
-        instructions: "PC : W passe longue, S passe courte, D tir, Q changer de joueur. Mobile : joystick.",
+        nom: "Flick Shot Soccer",
+        image: "images/Flick Shot Soccer-512x384.jpg",
+        iframe: "https://html5.gamemonetize.co/t6skn3ximxeitrfklq4g7myypwvhllk2/",
+        description: "Flick Shot Soccer est un jeu de tir au but amusant et addictif où la précision est essentielle pour marquer. Visez et positionnez votre tir en faisant glisser votre doigt, puis relâchez pour tirer et envoyer le ballon au fond des filets.",
+        instructions: "Cliquez ou appuyez pour jouer.",
         compatible: "iOS - Android"
     },
     {
-        nom: "Goal Rush",
-        image: "images/goal-rush.jpg",
-        iframe: "https://html5.gamedistribution.com/ed673e7229114623a084e6bbdd2d008c/" + referrer,
-        description: "Un jeu de football néon ultra-rapide où précision et réflexes fulgurants sont la clé de la victoire !",
-        instructions: "Utilisez les touches WASD/ZQSD ou les flèches directionnelles pour jouer.",
+        nom: "Head Soccer",
+        image: "images/Head Football Game-512x384.jpg",
+        iframe: "https://html5.gamemonetize.co/08dvlr1ksytrmsn4pd1s9t1t2ob8egql/",
+        description: "Head Soccer est le jeu de football ultime où l'habileté, la vitesse et la stratégie déterminent le vainqueur. Lancez-vous sur le terrain pour des matchs de football effrénés, marquez des buts épiques et luttez pour devenir le champion !",
+        instructions: "Cliquez ou appuyez pour jouer.",
         compatible: "iOS - Android"
     },
     {
-        nom: "Doodle Football",
-        image: "images/doddle-football.jpg",
-        iframe: "https://html5.gamedistribution.com/2babe9f2198b4ac38944b8f4c81fff7c/" + referrer,
-        description: "Un jeu 2D occasionnel et captivant : guidez le ballon jusqu'au but en relevant des défis dans des environnements variés.",
-        instructions: "Cliquez avec le bouton gauche pour tracer une ligne. R pour redémarrer. Barre d'espace pour démarrer.",
+        nom: "World Cup Soccer",
+        image: "images/World Soccer Game Championship-512x384.jpg",
+        iframe: "https://html5.gamemonetize.co/tcmwqk752btbdxuthwtk5ilatulu5ioj/",
+        description: "Devenez le plus grand joueur de football au monde ! Plongez dans l'univers du football extrême et bâtissez votre carrière de professionnel au sommet du classement mondial. Déjouez les défenses adverses, enroulez le tir parfait et célébrez la victoire !",
+        instructions: "Déplacement : Haut, Bas, Gauche, Droite. Course rapide : Flèches + K. Passe : N. Frappe haute : M. Lancer/Longue distance : Barre d'espace.",
         compatible: "iOS - Android"
     },
     {
-        nom: "Football Fun",
-        image: "images/football-fun.jpg",
-        iframe: "https://html5.gamedistribution.com/b59e09ac797a4ccf9ddac5ac0c87a91c/" + referrer,
-        description: "Affrontez vos adversaires en équipe de 3. Marquez des buts et repoussez les attaques. Devenez le meilleur joueur !",
-        instructions: "PC : WASD pour se déplacer, V passe, N tir, B changer de joueur, M vitesse. Mobile : joystick + boutons.",
+        nom: "Kick Pong",
+        image: "images/Kick Pong   Table Soccer-512x512.jpg",
+        iframe: "https://html5.gamemonetize.co/q0cdps5gwd7bvt6hfrr8i1yxmznwsnfa/",
+        description: "Foosball Pong : Football Arcade et Batailles à 2 Joueurs ! Le mélange ultime de baby-foot et de Pong est enfin là ! Glissez, marquez et défendez dans des matchs 2D rapides contre l'IA ou un ami. Facile à apprendre, difficile à maîtriser !",
+        instructions: "Balayez sur mobile. Clavier fléché sur PC.",
+        compatible: "iOS - Android"
+    },
+    {
+        nom: "Goal Dot 3D",
+        image: "images/Goal Dot 3D-512x384.jpg",
+        iframe: "https://html5.gamemonetize.co/ofunjjov725sve0gi4rdvdwfism6a8ul/",
+        description: "Bienvenue dans Goal Dot, le jeu de football 3D ! Visez et relâchez pour tirer le ballon dans la grille et remplir l'espace avec 2 points verts ou plus, horizontalement ou verticalement. Affrontez un autre joueur et terminez la mission avant lui pour gagner.",
+        instructions: "Touchez ou cliquez avec la souris pour jouer !",
         compatible: "iOS - Android"
     },
     {
         nom: "Football Penalty",
-        image: "images/football-penalty.jpg",
-        iframe: "https://html5.gamedistribution.com/14b5bd0218824dd3965eed3b186d936f/" + referrer,
-        description: "Lancez-vous dans un défi de tirs au but palpitant et sans fin ! Marquez des points et progressez à travers les niveaux.",
-        instructions: "Envoyez le ballon sur des cibles tout en évitant les obstacles comme les cônes et les caisses.",
+        image: "images/Football Penalty-512x384.jpg",
+        iframe: "https://html5.gamemonetize.co/ikpi1ghjcghyj8jk95k5wif87fz7hfs2/",
+        description: "Lancez-vous dans un défi de tirs au but palpitant et sans fin ! Montrez à vos adversaires la puissance de vos tirs précis et devenez une véritable légende du football. Marquez des points à chaque tir réussi et progressez à travers les niveaux.",
+        instructions: "Tirez sur des cibles tout en évitant les obstacles comme les cônes et les boîtes. Soyez rapide et précis pour marquer des points et remporter des trophées !",
         compatible: "iOS - Android"
     },
     {
-        nom: "Soccer Dash",
-        image: "images/soccer-dash.jpg",
-        iframe: "https://html5.gamedistribution.com/5772350f4ea345959c4e56a24d94ee42/" + referrer,
-        description: "Faites glisser un ballon entre les obstacles et les joueurs pour marquer un but. Le jeu passe au ralenti pendant le tir.",
-        instructions: "Faites glisser le ballon pour choisir la direction du tir et relâchez pour frapper.",
-        compatible: "Android"
-    },
-    {
-        nom: "Minitoss",
-        image: "images/mini-toss.jpg",
-        iframe: "https://html5.gamedistribution.com/998043a8cbae4038a26a9428982b82ca/" + referrer,
-        description: "Marque des buts, protège tes cages et bats tous tes adversaires. Deviens le roi du terrain !",
-        instructions: "Croix directionnelle et barre d'espace.",
+        nom: "Euro Champ 2024",
+        image: "images/Euro Champ 2024-512x384.jpg",
+        iframe: "https://html5.gamemonetize.co/oid03ewux4ogtr5g48wqjh9x0k6j4uji/",
+        description: "Un jeu de football 3D exceptionnel qui vous tiendra en haleine pendant des heures. Parviendrez-vous à remporter les 4 matchs éliminatoires et à devenir le nouveau champion d'Europe ? Marquez des buts sur coups francs et volées.",
+        instructions: "Utilisez la souris pour vous déplacer ; positionnez-la plus bas pour tirer plus haut. Sur mobile, utilisez les commandes tactiles.",
         compatible: "iOS - Android"
     },
     {
-        nom: "Real Freekick 3D",
-        image: "images/Real-FreeKick-3D.jpg",
-        iframe: "https://html5.gamedistribution.com/527ae66f4e664fdc8847e7ce952165dc/" + referrer,
-        description: "Un jeu de tirs au but où le sort du championnat se joue lors de séances haletantes. Jouez attaquant et gardien !",
-        instructions: "Incarnez le tireur pour marquer ou le gardien pour arrêter. Visez et tirez !",
+        nom: "Flick n Goal",
+        image: "images/Flick n Goal-512x384.jpg",
+        iframe: "https://html5.gamemonetize.co/wn3blhqcrzynyt126r2iltb3zciimksm/",
+        description: "Préparez-vous à vivre une expérience de football électrisante ! Choisissez votre équipe parmi une sélection variée de pays et plongez dans l'univers palpitant du football international. Placez vos joueurs stratégiquement et déployez votre talent tactique.",
+        instructions: "Faites glisser la souris et relâchez-la pour frapper la balle et déplacer les joueurs.",
+        compatible: "PC uniquement"
+    },
+    {
+        nom: "Footbag Fanatic",
+        image: "images/Footbag Fanatic-512x384.jpg",
+        iframe: "https://html5.gamemonetize.co/cifu259dqy893zivlmf4ytvmumfuscq8/",
+        description: "Vivez l'excitation de ce fantastique jeu de football arcade casual ! Pour frapper le ballon, votre adorable petit personnage doit être en l'air ! Regardez le multiplicateur de score grimper en flèche. Débloquez de nouveaux personnages et ballons.",
+        instructions: "Cliquez ou appuyez avec la souris pour jouer !",
         compatible: "iOS - Android"
     },
     {
-        nom: "Soccer Merge",
-        image: "images/soccer-merge.jpg",
-        iframe: "https://html5.gamedistribution.com/669b650069914123b72bbeef5a95e2d3/" + referrer,
-        description: "Gagnez de l'argent en remportant des compétitions, attirez les meilleurs joueurs et créez votre équipe de football idéale.",
-        instructions: "PC : souris. Mobile : tactile.",
+        nom: "Run and Shoot Goal",
+        image: "images/Run and Shoot  GOAL -512x384.jpg",
+        iframe: "https://html5.gamemonetize.co/sfgt6xl9hugkmihr98y1jzma6t7knvl9/",
+        description: "Courez sans toucher les obstacles ni les joueurs adverses. Collectez un maximum d'énergie bleue et frappez la balle plus fort. Dirigez ensuite la balle et essayez de tromper le gardien. Marquez un but et passez au niveau suivant !",
+        instructions: "Flèche gauche/droite pour se déplacer, Barre d'espace pour sauter. Déplacement de la balle : Flèches gauche et droite.",
         compatible: "iOS - Android"
     },
     {
-        nom: "Apex Football Battle",
-        image: "images/apex-football-battle.jpg",
-        iframe: "https://html5.gamedistribution.com/154c5754a5264da2bcd50a72e95df2c0/" + referrer,
-        description: "La passion du football prend vie grâce à l'expérience de simulation la plus réaliste et immersive jamais créée.",
-        instructions: "Flèches/WASD pour se déplacer, Espace tir, K centrer, N passe, M passe en profondeur, J changer de joueur.",
-        compatible: "iOS - Android"
-    },
-    {
-        nom: "Crazy Kick!",
-        image: "images/crazy-kick.jpeg",
-        iframe: "https://html5.gamedistribution.com/408abda71dfb4d53a950747bc270e34e/" + referrer,
-        description: "Montrez vos plus beaux gestes dans ce jeu de foot ultra-dynamique où le but est garanti !",
-        instructions: "Visez en maintenant le bouton gauche de la souris enfoncé. Relâchez pour tirer.",
+        nom: "Goal Quest",
+        image: "images/Liga Super Malaysia-512x384.jpg",
+        iframe: "https://html5.gamemonetize.co/4gfskfmycte9r79aaz1umeaj9lmyjkvh/",
+        description: "Découvrez la fusion du sport et de la résolution d'énigmes dans ce captivant jeu de football en 2D. Brisez les obstacles de pierre cubique pour vous frayer un chemin jusqu'au but. Collectez trois étoiles dans chaque niveau pour débloquer de nouveaux défis.",
+        instructions: "Ordinateur : Faites exploser les cubes avec le bouton gauche de la souris. Mobile : Touchez l'écran et faites éclater tout ce que vous voulez.",
         compatible: "iOS - Android"
     }
 ];
