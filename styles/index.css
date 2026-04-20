@@ -160,8 +160,8 @@ nav a:hover {
   justify-content: center;
 }
 
-/* bannière principale : même rendu que le hero (verre dépoli)
-   Mêmes valeurs que .hero pour avoir une cohérence visuelle parfaite
+/* bannière principale : mêmes valeurs que le hero (verre dépoli)
+   pour avoir un rendu visuel 100% identique
 */
 .banner {
   width: 90%;
@@ -196,10 +196,12 @@ nav a:hover {
   margin-bottom: 15px;
 }
 
+/* Hover : la bannière descend de 10px + légère ombre renforcée
+   (pas de changement de bordure, comme à l'origine)
+*/
 .banner:hover {
   transform: translateY(10px);
   box-shadow: 0 15px 40px rgba(0,0,0,0.35);
-  border-color: rgba(46, 204, 113, 0.4);  /* la bordure devient verte au hover */
 }
 
 article {
