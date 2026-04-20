@@ -7,22 +7,26 @@
   box-sizing: border-box;
 }
 
-/* IMPORTANT : fond sur html ET body pour éviter le blanc au scroll/overscroll */
+/* Background image de stade avec overlay sombre
+   linear-gradient par-dessus l'image → assombrit pour que le texte reste lisible
+   0.65 en haut, 0.75 en bas → le bas est légèrement plus sombre
+   url → l'image de fond du Camp Nou
+   center/cover → centrée et remplit tout l'écran
+   no-repeat → pas de répétition
+   fixed → reste fixe au scroll (effet parallax)
+*/
 html, body {
   height: 100%;
-  background: linear-gradient(90deg, #2ecc71 50%, #27ae60 50%);
-  background-size: 80px 100%;
-  background-attachment: fixed;  /* le fond reste fixe quand on scroll → effet parallax */
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)),
+    url('../images/camp-nou-satidium-1920x1080.jpg') center/cover no-repeat fixed;
 }
-
-
-
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
+  color: #f0f0f0;
   line-height: 1.6;
-
 }
 
 /* ===================== TOPBAR (header sticky) ===================== */
@@ -41,8 +45,8 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between; /* space beetween place les 2 elements aux extremités */
-  align-items: center; /* aligne verticalement (pas coller en haut) les  2 elements aux extremités */
+  justify-content: space-between;
+  align-items: center;
   gap: 16px;
 }
 
@@ -50,16 +54,12 @@ body {
   font-size: 1.6rem;
   font-weight: 800;
   letter-spacing: 1px;
-  align-items: center;
-
 }
-
-
 
 /* NAV */
 nav ul {
-  list-style: none;          /* enlève les puces */
-  display: flex;             /* menu en ligne */
+  list-style: none;
+  display: flex;
   gap: 24px;
 }
 
@@ -81,8 +81,7 @@ nav a:hover {
   width: 90%;
   max-width: 1200px;
   margin: 2rem auto 0;
-
-  background: rgba(0,0,0,0.45);/* transpaarent */
+  background: rgba(0,0,0,0.45);
   color: white;
   border-radius: 22px;
   padding: 3rem 1.5rem;
@@ -95,11 +94,11 @@ nav a:hover {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  flex-direction: column;/*permet d'empiler les éléments */
+  flex-direction: column;
 }
 
 .hero-inner h1 {
-  margin: 0;                 /* IMPORTANT : évite l’espace bizarre en haut */
+  margin: 0;
   font-size: 2.6rem;
 }
 
@@ -157,18 +156,13 @@ nav a:hover {
 .banner {
   width: 90%;
   max-width: 1200px;
-
   min-height: 220px;
-
   border-radius: 25px;
   text-decoration: none;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   transition: transform 0.2s, box-shadow 0.2s;
-
   box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
@@ -189,21 +183,17 @@ nav a:hover {
 }
 
 .banner:hover {
-  transform: translateY(10px);/* quand on passe la souris sur les divs elle se decale un peu vers le bas */
-  box-shadow: 0 15px 40px rgba(0,0,0,0.35);/* 0.35 permet d'avoir des div transparentes */
+  transform: translateY(10px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.35);
 }
-
 
 .banner-quiz{
   background-color: rgba(0,0,0,0.45);
 }
 
 .banner-games{
-background-color: rgba(0,0,0,0.45);
+  background-color: rgba(0,0,0,0.45);
 }
-
-
-
 
 article {
   background: rgba(255,255,255,0.90);
@@ -211,14 +201,13 @@ article {
   padding: 22px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
   text-align: center;
-  min-height: 180 px ;
+  min-height: 180px;
 }
 
 article h3 {
   font-size: 1.6rem;
   margin-bottom: 14px;
 }
-
 
 /* ===================== FOOTER ===================== */
 footer {
@@ -229,10 +218,6 @@ footer {
   box-shadow: 0 -6px 18px rgba(0, 0, 0, 0.25);
 }
 
-/* Conteneur flex : même principe que header-container
-   justify-content: space-between → copyright à gauche, liens à droite
-   flex-wrap: wrap → si pas assez de place, les éléments passent à la ligne
-*/
 .footer-container {
   width: 90%;
   max-width: 1200px;
@@ -244,7 +229,6 @@ footer {
   gap: 1rem;
 }
 
-/* opacity: 0.8 → rend le texte légèrement transparent (1 = opaque, 0 = invisible) */
 .footer-container p {
   opacity: 0.8;
   font-size: 0.95rem;
@@ -255,10 +239,6 @@ footer {
   gap: 1.5rem;
 }
 
-/* border-bottom: 2px solid transparent → trait invisible sous le lien,
-   prêt à devenir vert au hover (même technique que border sur les inputs)
-   padding-bottom → petit espace entre le texte et le trait
-*/
 .footer-links a {
   color: white;
   text-decoration: none;
@@ -268,7 +248,6 @@ footer {
   transition: border-color 0.25s;
 }
 
-/* Au survol le trait invisible devient vert */
 .footer-links a:hover {
   border-color: #2ecc71;
 }
@@ -284,14 +263,10 @@ footer {
 /* Conteneur des logos réseaux sociaux */
 .logo-container {
   display: flex;
-  gap: 1rem;              /* espace entre chaque logo */
+  gap: 1rem;
   align-items: center;
 }
 
-/* Les images des logos : taille fixe + coins arrondis
-   object-fit: cover → l'image remplit le carré sans se déformer (elle se recadre)
-   cursor: pointer → main au survol pour montrer que c'est cliquable
-*/
 .logo-container img {
   width: 35px;
   height: 35px;
@@ -301,18 +276,14 @@ footer {
   transition: transform 0.2s;
 }
 
-/* Petit effet zoom au survol */
 .logo-container img:hover {
-  transform: scale(1.15);   /* scale = agrandit l'élément (1.15 = 115% de sa taille) */
+  transform: scale(1.15);
 }
 
-
-/* Variables globales accessibles partout dans le site
-   On les utilise avec var(--nomVariable) dans n'importe quel fichier CSS
-*/
+/* Variables globales accessibles partout dans le site */
 :root {
-  --sidebar-closed: 50px;    /* largeur sidebar fermée (réduit de 70px à 50px) */
-  --sidebar-open: 220px;     /* largeur sidebar au hover */
-  --content-max: 110rem;     /* largeur max du contenu central */
+  --sidebar-closed: 50px;
+  --sidebar-open: 220px;
+  --content-max: 110rem;
   --page-gap: 20px;
 }
