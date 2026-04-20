@@ -17,11 +17,12 @@ const jeux = [
     {
         nom: "Super Football Fever",
         image: "images/super-football-fever.jpg",
-        iframe: "https://html5.gamedistribution.com/9101fea0805544d3aa15f794af37622b/" + referrer,
+        iframe: "https://games.construct.net/26420/latest",
         description: "Une expérience de football d'un réalisme sans précédent grâce à des animations fluides et des graphismes 3D plus vrais que nature.",
         instructions: "Utilisez le joystick virtuel pour contrôler les déplacements et les dribbles. Appuyez sur les boutons pour les passes et les tirs.",
         compatible: "iOS - Android"
     },
+    
     {
         nom: "Football Duel",
         image: "images/football-duel.jpg",

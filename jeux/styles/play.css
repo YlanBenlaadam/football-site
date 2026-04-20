@@ -7,7 +7,7 @@
     max-width: 1100px;
     margin: 1.5rem auto 0;
     border-radius: 18px;
-    overflow: hidden;              /* les coins arrondis s'appliquent à tout le bloc, car les enants donc la iframe et la top bar ne peuvent plus depasser */
+    overflow: hidden;              /* les coins arrondis s'appliquent à tout le bloc, car les enfants donc la iframe et la top bar ne peuvent plus depasser */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
@@ -16,7 +16,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.8);/* toolbar plus transparente que le reste */
     padding: 0.8rem 1.2rem;
     /* pas de margin ni de border-radius, le wrapper gère tout */
 }
@@ -31,8 +31,7 @@
 
 /* Fond sombre sur le bouton retour pour qu'il soit lisible sur le vert */
 .back-btn {
-    background: rgba(0, 0, 0, 0.0) ;
-    border: 2px solid #2ecc71;
+    border: 2px solid;
     color: white;
     font-weight: 700;
     font-size: 0.95rem;
@@ -43,12 +42,11 @@
 }
 
 .back-btn:hover{
-    background: #1e8449;
+    background: grey;
 }
 /* Style du bouton plein écran */
 .fullscreen-btn {
-    background: rgba(0, 0, 0, 0) ;
-    border: 2px solid #2ecc71;
+    border: 2px solid;
     color: white;
     font-weight: 700;
     font-size: 0.95rem;
@@ -59,7 +57,7 @@
 }
 
 .fullscreen-btn:hover {
-    background: #1e8449;
+    background: grey;
 }
 
 
