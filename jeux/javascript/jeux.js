@@ -9,7 +9,7 @@ const jeux = [
     {
         nom: "Football Dual",
         image: "images/football-dual.jpg",
-        iframe: "https://html5.gamedistribution.com/3c96c6a76dc94cedbe3d4bc519e0a7ce/" + referrer,
+        iframe: "https://html5.gamedistribution.com/3c96c6a76dc94cedbe3d4bc519e0a7ce/" + referrer+"/games/{game-path}" ,
         description: "Un jeu passionnant de type baby-foot, auquel vous pouvez jouer seul ou avec des amis sur le même appareil ou en réseau.",
         instructions: "Utilisez la souris de votre ordinateur ou appuyez avec votre doigt sur votre appareil mobile pour contrôler les personnages sur le terrain.",
         compatible: "iOS - Android"
