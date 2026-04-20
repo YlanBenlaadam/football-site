@@ -160,22 +160,20 @@ nav a:hover {
   justify-content: center;
 }
 
-/* bannière principale avec effet verre dépoli
-   backdrop-filter: blur → floute le stade derrière la bannière
-   background rgba(0,0,0,0.3) → léger assombrissement pour la lisibilité
-   border → contour subtil blanc semi-transparent pour délimiter
+/* bannière principale : même rendu que le hero (verre dépoli)
+   Mêmes valeurs que .hero pour avoir une cohérence visuelle parfaite
 */
 .banner {
   width: 90%;
   max-width: 1200px;
   min-height: 220px;
-  border-radius: 25px;
+  border-radius: 22px;
   text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.2s, box-shadow 0.2s;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.1);
