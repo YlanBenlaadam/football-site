@@ -152,7 +152,9 @@ nav a:hover {
   justify-content: center;
 }
 
-/* bannière principale */
+/* bannière principale
+   Plus de background ni box-shadow pour fondre dans le décor du stade
+*/
 .banner {
   width: 90%;
   max-width: 1200px;
@@ -162,8 +164,7 @@ nav a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  transition: transform 0.2s;
 }
 
 /* contenu centré */
@@ -184,15 +185,12 @@ nav a:hover {
 
 .banner:hover {
   transform: translateY(10px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.35);
 }
 
-.banner-quiz{
-  background-color: rgba(0,0,0,0.45);
-}
-
-.banner-games{
-  background-color: rgba(0,0,0,0.45);
+/* Les 2 bannières sont transparentes pour laisser voir le stade derrière */
+.banner-quiz,
+.banner-games {
+  background-color: transparent;
 }
 
 article {
