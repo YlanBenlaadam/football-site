@@ -31,6 +31,7 @@
 
 /* Fond sombre sur le bouton retour pour qu'il soit lisible sur le vert */
 .back-btn {
+    background: rgba(0, 0, 0, 0) ;
     border: 2px solid;
     color: white;
     font-weight: 700;
