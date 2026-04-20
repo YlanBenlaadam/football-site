@@ -76,12 +76,20 @@ nav a:hover {
   border-color: #2ecc71;
 }
 
-/* ===================== HERO ===================== */
+/* ===================== HERO =====================
+   Effet verre dépoli (frosted glass) :
+   - background semi-transparent
+   - backdrop-filter: blur → floute ce qu'il y a derrière le hero
+   - border légère pour un contour subtil
+*/
 .hero {
   width: 90%;
   max-width: 1200px;
   margin: 2rem auto 0;
-  background: rgba(0,0,0,0.45);
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: white;
   border-radius: 22px;
   padding: 3rem 1.5rem;
@@ -152,8 +160,10 @@ nav a:hover {
   justify-content: center;
 }
 
-/* bannière principale
-   Plus de background ni box-shadow pour fondre dans le décor du stade
+/* bannière principale avec effet verre dépoli
+   backdrop-filter: blur → floute le stade derrière la bannière
+   background rgba(0,0,0,0.3) → léger assombrissement pour la lisibilité
+   border → contour subtil blanc semi-transparent pour délimiter
 */
 .banner {
   width: 90%;
@@ -164,7 +174,12 @@ nav a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
 /* contenu centré */
@@ -185,12 +200,8 @@ nav a:hover {
 
 .banner:hover {
   transform: translateY(10px);
-}
-
-/* Les 2 bannières sont transparentes pour laisser voir le stade derrière */
-.banner-quiz,
-.banner-games {
-  background-color: transparent;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+  border-color: rgba(46, 204, 113, 0.4);  /* la bordure devient verte au hover */
 }
 
 article {
