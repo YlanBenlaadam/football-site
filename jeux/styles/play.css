@@ -46,6 +46,7 @@
 }
 /* Style du bouton plein écran */
 .fullscreen-btn {
+    background: rgba(0, 0, 0, 0) ;
     border: 2px solid;
     color: white;
     font-weight: 700;
