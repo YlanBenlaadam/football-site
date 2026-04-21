@@ -291,7 +291,7 @@ main#top {
 .quiz-modal {
   position: fixed;
   inset: 0;
-  z-index: 3000;
+  z-index: 3000;/* permet de faire apparaitre la popup "au dessus" du reste de la page */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -306,7 +306,7 @@ main#top {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);/* effet flou derriere la pop-up*/
 }
 
 .quiz-modal-box {
@@ -315,7 +315,7 @@ main#top {
   width: min(100%, 620px);
   background: rgba(0, 0, 0, 0.88);
   color: white;
-  border: 1px solid rgba(46, 204, 113, 0.25);
+  border: 1px solid rgba(210, 206, 206);
   border-radius: 1.8rem;
   padding: 2rem 1.6rem;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
@@ -350,7 +350,7 @@ main#top {
   margin: 0;
   line-height: 1.7;
   opacity: 0.95;
-  white-space: pre-line;/* les saut de ligne qqu'on met dans le js sont appliquer */
+  white-space: pre-line;/* les saut de ligne qu'on met dans le js sont appliquer */
 }
 
 .quiz-modal-infos {
