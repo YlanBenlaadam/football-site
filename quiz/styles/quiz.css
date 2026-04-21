@@ -415,4 +415,17 @@ main#top {
   #quiz-modal-title {
     font-size: 1.6rem;
   }
+
+  /* Cache la sidebar sur mobile */
+  .side-left {
+    display: none;
+  }
+
+  /* Le contenu prend toute la largeur car plus de sidebar */
+  main#top {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+
 }

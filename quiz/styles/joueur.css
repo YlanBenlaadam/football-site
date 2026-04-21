@@ -212,3 +212,18 @@ left: 50% + translateX(-50%) → centre horizontalement
   min-width: 180px;
   text-align: center;
 }
+
+
+/* RESPONSIVE MOBILE : résultats */
+@media (max-width: 700px) {
+  .result-box p {
+    margin: 2rem auto 0;
+    font-size: 1.5rem;
+  }
+
+  .result-actions {
+    position: static;
+    margin-top: 2rem;
+    transform: none;
+  }
+}
