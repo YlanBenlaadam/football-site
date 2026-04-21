@@ -118,7 +118,7 @@ main#top {
 
 /* SELECTION DU JOUR — même opacité que les bannières de l'accueil (0.45) */
 .daily {
-  background: rgba(0,0,0,0.45);
+  background: rgba(0,0,0,0.55);
   border-radius: 1.4rem;
   padding: 1.2rem;
   box-shadow: 0 10px 25px rgba(0,0,0,0.18);
@@ -214,7 +214,7 @@ main#top {
 /* BLOCS THEME — même opacité que les bannières de l'accueil (0.45) */
 .theme-block {
   margin-top: 1.2rem;
-  background: rgba(0,0,0,0.45);
+  background: rgba(0,0,0,0.55);
   border-radius: 1.4rem;
   padding: 1rem;
   box-shadow: 0 10px 25px rgba(0,0,0,0.18);
