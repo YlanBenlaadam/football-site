@@ -1,7 +1,13 @@
-/* PAGE JOUEUR club */
+/* PAGE QUIZ CLUB
+   On surcharge le background de index.css pour afficher l'image du tifo/écusson
+   L'overlay (0.3) et le style center/cover fixed restent identiques à l'accueil
+*/
 
 html, body {
   min-height: 100%;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('../images/quizz-club-2048x2048.jpg') center/cover no-repeat fixed;
 }
 
 body {
@@ -66,7 +72,7 @@ main#top {
   background: rgba(255,255,255,0.08);
   color: white;
   font-weight: 700;
-  cursor: pointer; /* avoir le doigt quand on passe sur le bouton */
+  cursor: pointer;
   transition: 0.2s;
 }
 
@@ -191,4 +197,3 @@ main#top {
   min-width: 180px;
   text-align: center;
 }
-
