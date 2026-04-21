@@ -1,6 +1,14 @@
-/* ===================== PAGE DE JEU ===================== */
+/* ===================== PAGE DE JEU (play.html) =====================
+   On surcharge le background de index.css pour afficher l'image gaming arena
+   L'overlay (0.3) et le style center/cover fixed restent identiques à l'accueil
+*/
 
-/* Barre au-dessus du jeu : retour à gauche, plein écran à droite */
+html, body {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('../images/play-img-2048x2048.jpg') center/cover no-repeat fixed;
+}
+
 /* Bloc qui regroupe la toolbar + l'iframe en un seul élément visuel */
 .game-wrapper {
     width: 90%;
@@ -16,22 +24,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0, 0, 0, 0.8);/* toolbar plus transparente que le reste */
+    background: rgba(0, 0, 0, 0.8);
     padding: 0.8rem 1.2rem;
-    /* pas de margin ni de border-radius, le wrapper gère tout */
 }
 
 /* L'iframe n'a plus besoin de son propre border-radius ni margin */
 .game-frame-container {
     width: 100%;
     aspect-ratio: 16 / 9;
-    /* plus de border-radius, margin ni box-shadow ici, c'est le wrapper qui gère */
 }
 
 
-/* Fond sombre sur le bouton retour pour qu'il soit lisible sur le vert */
+/* Fond sombre sur le bouton retour pour qu'il soit lisible */
 .back-btn {
-    background: rgba(0, 0, 0, 0) ;
+    background: rgba(0, 0, 0, 0);
     border: 2px solid;
     color: white;
     font-weight: 700;
@@ -45,9 +51,10 @@
 .back-btn:hover{
     background: grey;
 }
+
 /* Style du bouton plein écran */
 .fullscreen-btn {
-    background: rgba(0, 0, 0, 0) ;
+    background: rgba(0, 0, 0, 0);
     border: 2px solid;
     color: white;
     font-weight: 700;
@@ -66,7 +73,7 @@
 .game-frame-container iframe {
     width: 100%;
     height: 100%;
-    border: none;   /* enlève la bordure par défaut des iframes */
+    border: none;
 }
 
 /* Carte d'infos sous le jeu */
