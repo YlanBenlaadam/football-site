@@ -1,7 +1,13 @@
-/* PAGE JOUEUR */
+/* PAGE QUIZ JOUEUR
+   On surcharge le background de index.css pour afficher l'image du joueur de dos
+   L'overlay (0.3) et le style center/cover fixed restent identiques à l'accueil
+*/
 
 html, body {
   min-height: 100%;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('../images/quizz-joueur-img-2048x2048.jpg') center/cover no-repeat fixed;
 }
 
 body {
@@ -187,45 +193,9 @@ main#top {
 /*
 Ce bloc sert à placer les boutons de résultat en bas et au centre de la result-box.
 
-Explication des propriétés :
-
-position: absolute;
-→ sort .result-actions du flux normal de la page
-→ permet de le placer précisément à l’intérieur de .result-box
-→ cela ne marche correctement que si le parent (.result-box) est en position: relative
-
-bottom: 2.5rem;
-→ place le bloc à 2.5rem du bas de la result-box
-
-left: 50%;
-→ place le bord gauche du bloc au milieu horizontal du parent
-
-transform: translateX(-50%);
-→ décale ensuite le bloc vers la gauche de 50% de SA propre largeur
-→ cela permet de le centrer parfaitement
-
-Pourquoi on utilise left: 50% + translateX(-50%) ?
-Exemple :
-- si le parent fait 1000px de large
-- left: 50% place le bord gauche du bloc à 500px
-- donc le bloc commence au milieu, il n’est pas centré
-- translateX(-50%) le recule de la moitié de sa propre largeur
-- au final, son centre tombe exactement au centre du parent
-
-display: flex;
-→ met les boutons sur une même ligne
-
-justify-content: center;
-→ centre les boutons dans le bloc flex
-
-gap: 1.5rem;
-→ ajoute un espace propre entre les deux boutons
-
-.result-actions .quiz-btn {
-  min-width: 180px;
-}
-→ force les boutons à avoir au moins la même largeur
-→ évite qu’un bouton soit beaucoup plus petit que l’autre
+position: absolute → sort .result-actions du flux normal
+bottom: 2.5rem → place à 2.5rem du bas de la result-box
+left: 50% + translateX(-50%) → centre horizontalement
 */
 
 .result-actions {
