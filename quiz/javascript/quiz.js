@@ -105,6 +105,7 @@ categorie.classList.add("daily-category");
 niveau.classList.add("daily-level");
 info.classList.add("daily-info");
 
+// affichage formater pour chaque quizz du jour
 categorie.textContent = dailyQuizess[index].emoji + " " + dailyQuizess[index].categorie ;
 niveau.textContent = "Niveau : " + dailyQuizess[index].niveau ;
 info.textContent = dailyQuizess[index].info ;
@@ -188,12 +189,13 @@ function openModal(theme) {
   const data = modalData[theme];
   if (!data) return;
 
+  // on remplis les balise HTML en fonction du theme cliquer
   modalTitle.textContent = data.title;
   modalText.textContent = data.text;
   modalType.textContent = data.type;
   modalLevels.textContent = data.levels;
   modalFormat.textContent = data.format;
-
+  // on affiche la popup
   modal.classList.remove("hidden");
 }
 
@@ -203,7 +205,7 @@ function closeModal() {
 
 themeButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    const theme = button.dataset.theme; // lis la valeur sur le bouton en savoir plus donc le thème
+    const theme = button.dataset.theme; // lis l'attribut data-theme de la balise HTML = le theme 
     openModal(theme);
   });
 });
