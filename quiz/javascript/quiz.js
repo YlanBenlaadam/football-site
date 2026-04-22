@@ -197,10 +197,12 @@ function openModal(theme) {
   modalFormat.textContent = data.format;
   // on affiche la popup
   modal.classList.remove("hidden");
+  document.body.classList.add("modal-open");    // bloque le scroll du body
 }
 
 function closeModal() {
   modal.classList.add("hidden");
+  document.body.classList.remove("modal-open"); // réactive le scroll du body
 }
 
 themeButtons.forEach((button) => {

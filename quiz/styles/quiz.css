@@ -417,4 +417,14 @@ main#top {
     grid-template-columns: 1fr;
     gap: 0.5rem;
   }
+  .quiz-modal-box {
+    padding: 1.2rem 1rem;
+    max-height: 85vh;        /* ne dépasse pas 85% de la hauteur de l'écran */
+    overflow-y: auto;        /* scrollbar interne si le contenu est trop long */
+}
+
+/* Empêche le scroll du contenu derrière la popup quand elle est ouverte */
+body.modal-open {
+    overflow: hidden;
+}
 }
