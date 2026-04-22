@@ -368,4 +368,23 @@ nav a {
   html, body {
     background-size: cover;
   }
+
+  /* Footer : tout en ligne, tailles réduites */
+  .footer-container {
+    gap: 0.5rem;
+  }
+
+  .footer-container p {
+    font-size: 0.7rem;
+  }
+
+  .footer-links a {
+    font-size: 0.7rem;
+  }
+
+  .logo-container img {
+    width: 22px;
+    height: 22px;
+  }
 }
+
