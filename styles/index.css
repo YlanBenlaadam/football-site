@@ -308,26 +308,26 @@ html, body {
 
 
   /* NAVBAR : empile logo au-dessus des liens au lieu de les mettre côte à côte */
+/* NAVBAR : empile logo au-dessus des liens, tout centré */
 .header-container {
-    gap: 8px;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
 }
 
-/* NAVBAR : grille 2 colonnes pour que les liens restent sur une ligne chacun */
 nav ul {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    gap: 8px;
-    text-align: center;
+    gap: 14px;
 }
 
 nav a {
-    font-size: 0.75rem;
-    white-space: nowrap;    /* empêche les mots de se couper sur 2 lignes */
+    font-size: 0.85rem;
+    white-space: nowrap;
 }
 
 #logo {
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
+
 
   /* BANNIÈRES : réduit la hauteur minimale */
   .banner {
