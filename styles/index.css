@@ -312,16 +312,21 @@ html, body {
     gap: 8px;
 }
 
+/* NAVBAR : grille 2 colonnes pour que les liens restent sur une ligne chacun */
 nav ul {
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 8px;
+    text-align: center;
 }
 
 nav a {
     font-size: 0.75rem;
+    white-space: nowrap;    /* empêche les mots de se couper sur 2 lignes */
 }
 
 #logo {
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
   /* BANNIÈRES : réduit la hauteur minimale */
