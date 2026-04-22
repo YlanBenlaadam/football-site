@@ -140,8 +140,6 @@ main#top {
   text-align: center;
 }
 
-
-
 .daily-btn {
   border: none;
   width: 2.4rem;
@@ -265,26 +263,7 @@ main#top {
   transform: translateY(-0.1rem);
 }
 
-@media (max-width: 900px) {
-  .theme-grid {
-    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
-  }
-}
 
-@media (max-width: 700px) {
-  main#top {
-    padding-left: calc(var(--sidebar-closed) + 0.5rem);
-    padding-right: 0.5rem;
-  }
-
-  .side-left:hover {
-    width: var(--sidebar-closed);
-  }
-
-  .side-text {
-    display: none;
-  }
-}
 
 /* ======================================= CSS POPUB======================================================*/
 

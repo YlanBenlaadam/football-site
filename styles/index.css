@@ -308,9 +308,9 @@ html, body {
 body {
     background-image:
       linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-      url('../images/camp-nou-mobile.png');
+      url('../images/camp-nou-mobile.png') center/cover no-repeat scroll;
   }
-/* NAVBAR : empile logo au-dessus des liens au lieu de les mettre côte à côte */
+
 /* NAVBAR : empile logo au-dessus des liens, tout centré */
 .header-container {
     flex-direction: column;

@@ -216,21 +216,31 @@ left: 50% + translateX(-50%) → centre horizontalement
 
 /* RESPONSIVE MOBILE : résultats */
 @media (max-width: 700px) {
+  main#top {
+      padding-left: 10px;
+      padding-right: 10px;
+  }
+
+  html, body {
+      background-attachment: scroll;
+  }
+
   .result-box p {
-    margin: 2rem auto 0;
-    font-size: 1.5rem;
+      margin: 2rem auto 0;
+      font-size: 1.5rem;
   }
 
   .result-actions {
-    position: static;
-    margin-top: 2rem;
-    transform: none;
-    flex-wrap: wrap;          /* les boutons passent à la ligne si besoin */
+      position: static;
+      margin-top: 2rem;
+      transform: none;
+      flex-wrap: wrap;
   }
 
   .result-actions .quiz-btn {
-    min-width: 120px;          /* réduit de 180px à 120px */
-    font-size: 0.85rem;
-    padding: 0.7rem 1rem;
+      min-width: 120px;
+      font-size: 0.85rem;
+      padding: 0.7rem 1rem;
   }
 }
+
