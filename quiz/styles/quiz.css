@@ -403,6 +403,24 @@ main#top {
   }
 }
 
+@media (max-width: 900px) {
+  .theme-grid {
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  }
+}
+
+@media (max-width: 1024px) {
+  /* Cache la sidebar sur mobile ET tablette (y compris en paysage) */
+  .side-left {
+    display: none;
+  }
+
+  main#top {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
 @media (max-width: 700px) {
   .quiz-modal-box {
     padding: 1.6rem 1rem;
@@ -416,16 +434,8 @@ main#top {
     font-size: 1.6rem;
   }
 
-  /* Cache la sidebar sur mobile */
-  .side-left {
-    display: none;
+  .theme-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
   }
-
-  /* Le contenu prend toute la largeur car plus de sidebar */
-  main#top {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-
 }
