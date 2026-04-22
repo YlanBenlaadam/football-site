@@ -224,5 +224,11 @@ main#top {
     font-size: 0.85rem;
     padding: 0.7rem 1rem;
   }
+
+  body {
+    background-image:
+      linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+      url('../images/Dembele-Mobile.png');
+  }
 }
 
