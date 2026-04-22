@@ -330,17 +330,22 @@ nav a {
 
 
   /* BANNIÈRES : réduit la hauteur minimale */
-  .banner {
+.banner {
     min-height: 150px;
-  }
+    padding: 1.5rem 1rem;
+}
 
-  .banner-content h3 {
-    font-size: 1.4rem;
-  }
+.banner-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 6px;
+}
 
-  .banner-content p {
-    font-size: 0.85rem;
-  }
+.banner-content p {
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+}
+
+
 
   /* TITRES DE SECTION */
   .game-section h2 {
