@@ -198,7 +198,6 @@ main#top {
   text-align: center;
 }
 
-/* RESPONSIVE MOBILE : résultats */
 @media (max-width: 700px) {
   .result-box p {
     margin: 2rem auto 0;
@@ -209,5 +208,12 @@ main#top {
     position: static;
     margin-top: 2rem;
     transform: none;
+    flex-wrap: wrap;          /* les boutons passent à la ligne si besoin */
+  }
+
+  .result-actions .quiz-btn {
+    min-width: 120px;          /* réduit de 180px à 120px */
+    font-size: 0.85rem;
+    padding: 0.7rem 1rem;
   }
 }
