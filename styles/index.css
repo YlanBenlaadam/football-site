@@ -305,11 +305,25 @@ html, body {
     height: auto  ;
     min-height: auto ;
 }
+/* Pseudo-élément qui affiche le fond sur la taille du viewport uniquement
+   position: fixed → reste collé à la taille de l'écran, pas du body
+   inset: 0 → occupe tout l'écran (top:0 right:0 bottom:0 left:0)
+   z-index: -1 → passe derrière tout le contenu de la page
+*/
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+        linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+        url('../images/camp-nou-mobile.png') center/cover no-repeat;
+    z-index: -1;
+}
+
+/* On retire le background du body pour laisser le pseudo-élément prendre le relais */
 body {
-    background-image:
-      linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-      url('../images/camp-nou-mobile.png') center/cover no-repeat scroll;
-  }
+    background: none;
+}
 
 /* NAVBAR : empile logo au-dessus des liens, tout centré */
 .header-container {
