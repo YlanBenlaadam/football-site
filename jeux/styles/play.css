@@ -9,6 +9,14 @@ html, body {
     url('../images/play-img-2048x2048.jpg') center/cover no-repeat fixed;
 }
 
+.topbar {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.6);
+}
+
 /* Bloc qui regroupe la toolbar + l'iframe en un seul élément visuel */
 .game-wrapper {
     width: 90%;
