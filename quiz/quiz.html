@@ -10,6 +10,7 @@
 </head>
 
 <body>
+  <div id="particles"></div>
 
   <!-- TOPBAR -->
   <header class="topbar">
@@ -31,7 +32,7 @@
     <!-- HERO (optionnel mais propre) -->
     <section class="hero">
       <div class="hero-inner">
-        <h1>🏆 Tous les Quiz</h1>
+        <h1 id="typing-text"></h1>
         <p>Choisis un thème, ou lance la sélection du jour.</p>
       </div>
     </section>
@@ -74,7 +75,7 @@
 
         <!-- BLOCS PAR THEME -->
 
-        <section class="theme-block" id="theme-bdor">
+        <section class="theme-block fade-in" id="theme-bdor">
           <div class="theme-head">
             <h3>🏅 Devine le ballon d’Or a partir des éléments de la question</h3>
             <p class="theme-more" data-theme="ballon-dor">Voir plus</p>
@@ -88,7 +89,7 @@
           </div>
         </section>
 
-        <section class="theme-block" id="theme-club">
+        <section class="theme-block fade-in" id="theme-club">
           <div class="theme-head">
             <h3>🏟️ Devine le club a partir des indices présents dans la question </h3>
             <p class="theme-more" data-theme="club">Voir plus</p>
@@ -101,7 +102,7 @@
           </div>
         </section>
 
-        <section class="theme-block" id="theme-joueur">
+        <section class="theme-block fade-in" id="theme-joueur">
           <div class="theme-head">
             <h3>⚽ Devine le joueur a partir de sa carriere  </h3>
             <p class="theme-more" data-theme="joueur">Voir plus</p>
@@ -173,7 +174,7 @@
 </div>
 
   <script src="./javascript/quiz.js"></script>
-
+  <script src="../scripts/index.js"></script>
 
 </body>
 </html>

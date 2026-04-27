@@ -10,6 +10,14 @@ html, body {
     url('../images/quizz-joueur-img-2048x2048.jpg') center/cover no-repeat fixed;
 }
 
+.topbar {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.6);
+}
+
 body {
   min-height: 100vh;
   display: flex;
@@ -224,7 +232,7 @@ left: 50% + translateX(-50%) → centre horizontalement
   html, body {
       background-attachment: scroll;
   }
-
+  
   .result-box p {
       margin: 2rem auto 0;
       font-size: 1.5rem;

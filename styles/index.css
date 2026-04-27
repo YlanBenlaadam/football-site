@@ -7,7 +7,8 @@
   box-sizing: border-box;
 }
 html {
-  background: #000;
+  background: #065C11;
+  scroll-behavior: smooth;
 }
 
 /* Background image de stade avec overlay sombre
@@ -21,12 +22,11 @@ html {
 html, body {
   height: 100%;
   min-height: 100vh;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url('../images/camp-nou-satidium-1920x1080.jpg') center/cover no-repeat fixed;
+ 
 }
 
 body {
+  background:#065C11;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #f0f0f0;
   line-height: 1.6;
@@ -34,7 +34,7 @@ body {
 
 /* ===================== TOPBAR (header sticky) ===================== */
 .topbar {
-  background-color: black;
+  background-color: #032d08;
   color: white;
   position: sticky;
   top: 0;
@@ -58,6 +58,9 @@ body {
   font-weight: 800;
   letter-spacing: 1px;
 }
+#quiz, #jeux {
+    scroll-margin-top: 80px;
+} 
 
 /* NAV */
 nav ul {
@@ -88,7 +91,8 @@ nav a:hover {
   width: 90%;
   max-width: 1200px;
   margin: 2rem auto 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: white;
   border-radius: 22px;
   padding: 3rem 1.5rem;
@@ -153,15 +157,24 @@ nav a:hover {
 }
 
 /* container centré */
+/* ===================== HOVER 3D (TILT) ===================== */
+
+/* perspective sur le parent → active la profondeur 3D pour les enfants
+   Plus la valeur est grande, moins l'effet est prononcé
+   1000px = effet subtil, 500px = effet fort
+*/
 .banner-container {
   width: 100%;
   display: flex;
   justify-content: center;
+  perspective: 1000px;
 }
 
-/* bannière principale : mêmes valeurs que le hero
-   Simple fond sombre semi-transparent, pas de blur ni de bordure
+/*bannière principale : mêmes valeurs que le hero
+  Simple fond sombre semi-transparent, pas de blur ni de bordure
+  La bannière doit préserver sa position 3D quand on la transforme
 */
+
 .banner {
   width: 90%;
   max-width: 1200px;
@@ -172,8 +185,11 @@ nav a:hover {
   align-items: center;
   justify-content: center;
   transition: transform 0.2s, box-shadow 0.2s;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.3);                    /* changé de 0.55 à 0.3 */
+  border: 1px solid rgba(255, 255, 255, 0.1);  
   box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
 }
 
 /* contenu centré */
@@ -192,11 +208,6 @@ nav a:hover {
   margin-bottom: 15px;
 }
 
-/* Hover : la bannière descend + ombre renforcée (comme à l'origine) */
-.banner:hover {
-  transform: translateY(10px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.35);
-}
 
 article {
   background: rgba(255,255,255,0.90);
@@ -216,9 +227,9 @@ article h3 {
 footer {
   margin-top: 3rem;
   padding: 2rem 0;
-  background:black;
+   background-color: #032d08;
   color: white;
-  box-shadow: 0 -6px 18px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
 .footer-container {
@@ -285,6 +296,185 @@ footer {
   --page-gap: 20px;
 }
 
+/* ===================== ANIMATIONS SCROLL ===================== */
+
+/* État initial : l'élément est invisible et décalé de 30px vers le bas
+   transition → anime le changement sur 0.6 secondes avec un ease-out (ralentit à la fin)
+*/
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* État final : quand le JS ajoute la classe "visible",
+   l'élément redevient opaque et remonte à sa position normale
+*/
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===================== EFFET TYPING ===================== */
+
+/* Le curseur clignotant à la fin du texte
+   border-right → trait vertical blanc qui simule un curseur
+   animation → le fait apparaître/disparaître en boucle
+*/
+#typing-text {
+    border-right: 3px solid white;
+    padding-right: 5px;
+    animation: blink 0.7s infinite;
+}
+
+/* Le curseur disparaît quand le texte est fini de taper */
+#typing-text.done {
+    border-right: none;
+}
+
+/* Animation du clignotement : alterne entre visible et invisible 
+    infinite -> animation infini
+    blink -> nom de l'anim (clignotement)
+    0.7s -> duré d'un cycle 
+    0% ( a 0sec) -> début de l'animation (background blanc)
+    50% ( a 0.35sec) -> millieu de l'animation (background transparent)
+    100% ( a  sec) -> fin de l'animation (background blanc)
+
+*/
+@keyframes blink {
+    0%, 100% { border-color: white; }
+    50% { border-color: transparent; }
+}
+
+/* ===================== TEXTE ROTATIF ===================== */
+
+/* Le texte a une transition douce sur l'opacité et le décalage vertical
+   Quand le JS change le texte, il disparaît en fondu puis réapparaît
+*/
+.rotating-text {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: white;
+    min-height: 1.5rem;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Quand le JS ajoute "hide", le texte disparaît (fondu + monte de 10px) */
+.rotating-text.hide {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.rota-text p {
+  margin-top: 1rem;
+}
+
+/* ===================== ICÔNES ANIMÉES ===================== */
+
+/* display: inline-block nécessaire pour que transform fonctionne sur un span
+   animation pulse → grossit et rétrécit doucement en boucle
+   Le délai varie pour que les icônes ne pulsent pas toutes en même temps
+*/
+.icon-bounce {
+    display: inline-block;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Chaque icône commence son animation avec un décalage différent
+   nth-child(2) = la 2ème icône démarre 0.3s après la première
+   nth-child(3) = la 3ème démarre 0.6s après
+   Ça crée un effet de "vague" au lieu d'un mouvement synchronisé
+*/
+.icon-bounce:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.icon-bounce:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+/* L'animation pulse : grossit de 20% au milieu puis revient
+   0% → taille normale
+   50% → 120% de la taille (scale 1.2)
+   100% → retour à la taille normale
+*/
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.3);
+    }
+}
+
+/* ===================== SÉPARATEUR LUMINEUX ===================== */
+
+/* Ligne horizontale fine avec un dégradé vert lumineux
+   Le dégradé part de transparent → vert → transparent
+   ce qui donne un effet de "trait lumineux" au centre
+*/
+.separator {
+    width: 60%;
+    height: 2px;
+    margin: 0.8rem auto;
+    background: linear-gradient(90deg, transparent, #2ecc71, transparent);
+    border-radius: 2px;
+
+}
+
+/* ===================== PARTICULES FLOTTANTES ===================== */
+
+/* Le conteneur occupe tout l'écran, fixé en arrière-plan
+   pointer-events: none → les particules ne bloquent pas les clics
+   (tu peux cliquer "à travers" les particules)
+   overflow: hidden → les particules qui sortent de l'écran sont cachées
+*/
+#particles {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Chaque particule est un cercle semi-transparent
+   position: absolute → positionnée librement dans le conteneur
+   border-radius: 50% → transforme le carré en cercle parfait
+   background: blanc semi-transparent pour un effet doux
+*/
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    animation: floatUp linear infinite;
+}
+
+/* L'animation fait monter la particule du bas vers le haut
+   tout en la balançant légèrement de gauche à droite (translateX)
+   0% → en bas de l'écran (translateY 100vh = tout en bas)
+   25% → légèrement à droite (translateX 20px)
+   50% → au milieu de l'écran, retour au centre horizontalement
+   75% → légèrement à gauche (translateX -20px)
+   100% → en haut de l'écran (translateY -100px = sort par le haut)
+*/
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) translateX(0);
+        opacity: 0;
+    }
+} 
+
+
 
 /* ===================== RESPONSIVE MOBILE ===================== */
 @media (max-width: 650px) {
@@ -304,20 +494,7 @@ html, body {
    inset: 0 → occupe tout l'écran (top:0 right:0 bottom:0 left:0)
    z-index: -1 → passe derrière tout le contenu de la page
 */
-body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background:
-        linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-        url('../images/camp-nou-mobile.png') center/cover no-repeat;
-    z-index: -1;
-}
 
-/* On retire le background du body pour laisser le pseudo-élément prendre le relais */
-body {
-    background: none;
-}
 
 /* NAVBAR : empile logo au-dessus des liens, tout centré */
 .header-container {
@@ -342,6 +519,16 @@ nav a {
 .banner {
     min-height: 150px;
     padding: 1.5rem 1rem;
+    background: rgba(0, 0, 0, 0.3);                    /* changé de 0.55 à 0.3 */
+    border: 1px solid rgba(255, 255, 255, 0.1);         /* ajouté */
+  }
+
+.banner:hover {
+    transform: translateY(10px);
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .banner-content h3 {

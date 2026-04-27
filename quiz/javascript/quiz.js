@@ -221,3 +221,99 @@ document.addEventListener("keydown", (event) => {
     closeModal();
   }
 });
+
+
+// ===================== PARTICULES FLOTTANTES =====================
+
+var particlesContainer = document.getElementById("particles");
+var nombreParticules = 20;
+
+function creerParticule() {
+    var particule = document.createElement("div");
+    particule.classList.add("particle");
+
+    var taille = Math.random() * 20 + 5;
+    var positionX = Math.random() * 100;
+    var duree = Math.random() * 12 + 8;
+    var delai = Math.random() * 10;
+
+    particule.style.width = taille + "px";
+    particule.style.height = taille + "px";
+    particule.style.left = positionX + "%";
+    particule.style.animationDuration = duree + "s";
+    particule.style.animationDelay = delai + "s";
+
+    particlesContainer.appendChild(particule);
+}
+
+for (var i = 0; i < nombreParticules; i++) {
+    creerParticule();
+}
+
+// ===================== FADE-IN AU SCROLL =====================
+
+var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+var fadeElements = document.querySelectorAll(".fade-in");
+
+fadeElements.forEach(function (element) {
+    observer.observe(element);
+});
+
+// ===================== EFFET TYPING =====================
+
+var typingElement = document.getElementById("typing-text");
+var texteComplet = "🏆 Tous les quiz";
+var indexLettre = 0;
+var vitesseFrappe = 80;
+
+function taperLettre() {
+    if (indexLettre < texteComplet.length) {
+        typingElement.textContent += texteComplet.charAt(indexLettre);
+        indexLettre++;
+        setTimeout(taperLettre, vitesseFrappe);
+    } else {
+        typingElement.classList.add("done");
+    }
+}
+
+setTimeout(taperLettre, 500);
+
+
+// ===================== ANIMATION CASCADE SUR LES QUIZ-TILES =====================
+
+// On récupère tous les blocs thèmes (Ballon d'Or, Club, Joueur)
+var themeBlocks = document.querySelectorAll(".theme-block");
+
+// Pour chaque bloc thème, on observe quand il entre dans l'écran
+var tileObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+
+            // On récupère les tiles (Facile, Moyen, Difficile) à l'intérieur de ce bloc
+            var tiles = entry.target.querySelectorAll(".quiz-tile");
+
+            // Pour chaque tile, on ajoute "visible" avec un délai croissant
+            // index 0 (Facile) → 0ms, index 1 (Moyen) → 200ms, index 2 (Difficile) → 400ms
+            tiles.forEach(function (tile, index) {
+                setTimeout(function () {
+                    tile.classList.add("visible");
+                }, index * 400);
+            });
+
+            tileObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+// On surveille chaque bloc thème
+themeBlocks.forEach(function (block) {
+    tileObserver.observe(block);
+});

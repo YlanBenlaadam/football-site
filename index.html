@@ -8,7 +8,7 @@
 </head>
 
 <body>
-
+    <div id="particles"></div>
 
     <header class="topbar">
         <div class="header-container">
@@ -26,43 +26,49 @@
 
     <main id="top">
         <!--Div du haut de page avec le titre du site et une phrase d'accroche-->
-        <section class="hero">
+        <section class="hero fade-in">
             <div class="hero-inner">
-                <h1>
-                    Prêt pour le coup d'envoi ? </br>
+                <h1 id="typing-text">
+                   </br>
                 </h1>
                 <p>Quiz, mini-jeux et arcade 100% foot. Choisis ton mode :</p>
-            <!--Div pour les boutons principaux du site -->
-            <div class="hero-actions">
+                
+                <!--Div pour les boutons principaux du site -->
+                <div class="hero-actions">
                     <!--lien vers les sesction pour quizz et jeux-->
                     <a class="btn" href="#quiz">🏆 Accéder aux Quiz</a>
                     <a class="btn btn-outline" href="#jeux">🎮 Voir les Jeux</a>
-            </div>
+                </div>
+                <div class="rota-text">
+                    <p id="rotating-text" class="rotating-text">⚽ 9 quiz disponibles</p>
+                </div>
             </div>
         </section>
 
 
-    <section id="quiz" class="game-section">
+    <section id="quiz" class="game-section fade-in">
         <h2>🏆 Quiz de légende</h2>
         <div class="banner-container">
             <!-- La bannière cliquable qui mène à la page quiz -->
             <a href="./quiz/quiz.html" class="banner banner-quiz">
                 <div class="banner-content">
                     <h3>Accéder à nos Quiz</h3>
+                    <div class="separator"></div>
                     <p>Teste tes connaissances avec nos quiz 100% football !</p>
-                    <p>🏅 Ballon d'Or · 🏟️ Clubs · ⚽ Joueurs</p>
+                    <p><span class="icon-bounce">🏅</span> Ballon d'Or · <span class="icon-bounce">🏟️</span> Clubs · <span class="icon-bounce">⚽</span> Joueurs</p>
                     <p>3 niveaux de difficulté et 5 questions par partie</p>
                 </div>
             </a>
         </div>
     </section>
 
-    <section id="jeux" class="game-section">
+    <section id="jeux" class="game-section fade-in">
         <h2>🎮 Espace Arcade</h2>
         <div class="banner-container">
             <a href="./jeux/jeux.html" class="banner banner-games">
                 <div class="banner-content">
                     <h3>Découvrir nos Jeux</h3>
+                    <div class="separator"></div>
                     <p> 🎮 Joue directement en ligne à des mini-jeux football !</p>
                     <p>🏆Des jeux fun et gratuits, sans inscription</p>
                     <p> ⚽ Jeux multijoueur et solo seulement pour les vrais foot addict </p>
@@ -94,6 +100,7 @@
         </div>
     </div>
 </footer>
-
+<script src="scripts/index.js"></script>
 </body>
+
 </html>

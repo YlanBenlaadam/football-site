@@ -9,6 +9,13 @@ html, body {
     linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url('../images/quizz-club-2048x2048.jpg') center/cover no-repeat fixed;
 }
+.topbar {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.6);
+}
 
 body {
   min-height: 100vh;

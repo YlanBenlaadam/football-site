@@ -40,7 +40,7 @@ main#top {
   left: 0;                /* collée à gauche */
   height: 100vh;          /* 100vh = 100% de la hauteur de la fenêtre du navigateur */
   width: var(--sidebar-closed);  /* 50px (variable définie dans :root) */
-  background: black;
+  background: #032d08;
   padding: 5.5rem 0 1rem; /* 5.5rem en haut (pour pas cacher sous la topbar), 0 sur les côtés, 1rem en bas */
   display: flex;
   flex-direction: column;
@@ -82,7 +82,7 @@ main#top {
 
 /* translateX = décale horizontalement (comme translateY mais sur l'axe X) */
 .side-item:hover {
-  background: rgba(255,255,255,0.08);
+  background: rgba(0, 0, 0, 0.3);  ;
   transform: translateX(0.2rem);
 }
 
@@ -118,11 +118,13 @@ main#top {
 
 /* SELECTION DU JOUR — même opacité que les bannières de l'accueil (0.45) */
 .daily {
-  background: rgba(0,0,0,0.55);
+  background: rgba(0, 0, 0, 0.3);                    /* changé de 0.55 à 0.3 */
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 1.4rem;
   padding: 1.2rem;
   box-shadow: 0 10px 25px rgba(0,0,0,0.18);
   color: white;
+  
 }
 
 .daily-head {
@@ -160,9 +162,10 @@ main#top {
   text-decoration: none;
   border-radius: 1.1rem;
   padding: 1.3rem;
-  background: rgba(0,0,0,0.55);
+  background: rgba(0, 0, 0, 0.3);              /* changé de 0.55 à 0.3 */
+  border: 1px solid rgba(255, 255, 255, 0.1);   /* ajouté */
   color: white;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.20);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   transition: 0.2s;
 }
 
@@ -212,7 +215,8 @@ main#top {
 /* BLOCS THEME — même opacité que les bannières de l'accueil (0.45) */
 .theme-block {
   margin-top: 1.2rem;
-  background: rgba(0,0,0,0.55);
+  background: rgba(0, 0, 0, 0.3);              /* changé de 0.55 à 0.3 */
+  border: 1px solid rgba(255, 255, 255, 0.1);   /* ajouté */
   border-radius: 1.4rem;
   padding: 1rem;
   box-shadow: 0 10px 25px rgba(0,0,0,0.18);
@@ -245,7 +249,9 @@ main#top {
 #theme-joueur {
   scroll-margin-top: 80px;
 }
+/* ===================== ANIMATION CASCADE ===================== */
 
+/* État initial : chaque tile est invisible et décalée vers le bas */
 .quiz-tile {
   display: block;
   text-decoration: none;
@@ -256,11 +262,20 @@ main#top {
   font-weight: 700;
   transition: 0.2s;
   text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
 }
-
+/* État visible : la tile apparaît */
+.quiz-tile.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 .quiz-tile:hover {
-  background: rgba(255,255,255,0.14);
-  transform: translateY(-0.1rem);
+  background: rgba(46, 204, 113, 0.15);
+  border-color: rgba(29, 160, 24, 0.5);
+  box-shadow: 0 0 15px rgba(46, 204, 113, 0.3), 0 0 30px rgba(46, 204, 113, 0.1);
+  transform: translateY(-3px);
 }
 
 
@@ -292,7 +307,7 @@ main#top {
   position: relative;
   z-index: 1;
   width: min(100%, 620px);
-  background: rgba(0, 0, 0, 0.88);
+   background: rgba(3, 45, 8, 0.95);     /* vert très foncé (#032d08) quasi opaque */
   color: white;
   border: 1px solid rgba(210, 206, 206);
   border-radius: 1.8rem;
@@ -371,15 +386,67 @@ main#top {
   text-decoration: underline white;
 }
 
-@keyframes modalFadeUp {
-  from {
+/* ===================== PARTICULES FLOTTANTES ===================== */
+#particles {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+    }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% {
+        transform: translateY(-100 px) translateX(0);
+        opacity: 0;
+    }
+}
+
+/* ===================== FADE-IN ===================== */
+.fade-in {
     opacity: 0;
-    transform: translateY(14px);
-  }
-  to {
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
     opacity: 1;
     transform: translateY(0);
-  }
+}
+
+/* Le contenu passe devant les particules */
+.topbar, main, footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===================== EFFET TYPING ===================== */
+#typing-text {
+    border-right: 3px solid white;
+    padding-right: 5px;
+    animation: blink 0.7s infinite;
+}
+
+#typing-text.done {
+    border-right: none;
+}
+
+@keyframes blink {
+    0%, 100% { border-color: white; }
+    50% { border-color: transparent; }
 }
 
 @media (max-width: 900px) {
