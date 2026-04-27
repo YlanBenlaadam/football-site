@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="../styles/index.css" />
     <link rel="stylesheet" href="styles/play.css" />
 </head>
-<!-- Cette page va etre celle qui sera appeller quand un jeu sera cliquer-->
 <body>
+    <!-- Particules flottantes -->
+    <div id="particles"></div>
 
     <!-- TOPBAR -->
     <header class="topbar">
@@ -25,7 +26,6 @@
     </header>
 
     <main id="top">
-        
         <div class="game-wrapper">
             <div class="play-toolbar">
                 <a href="./jeux.html" class="back-btn">← Retour aux jeux</a>
@@ -36,9 +36,8 @@
             </div>
         </div>
 
-
-        <!-- Carte infos du jeu (remplie par le JS) -->
-        <div class="game-info-card">
+        <!-- Carte infos du jeu -->
+        <div class="game-info-card fade-in">
             <h2 id="game-title">Chargement...</h2>
             <p id="game-description"></p>
             <div class="game-details">
@@ -52,7 +51,6 @@
                 </div>
             </div>
         </div>
-
     </main>
 
     <!-- FOOTER -->
@@ -77,9 +75,8 @@
         </div>
     </footer>
 
-    <!-- On charge jeux.js d'abord (contient le tableau) puis play.js (lit l'URL et affiche le jeu) -->
     <script src="javascript/jeux.js"></script>
     <script src="javascript/play.js"></script>
-
+    <script src="../scripts/animations.js"></script>
 </body>
 </html>
