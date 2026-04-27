@@ -163,6 +163,7 @@ main#top {
 
 .result-box p {
   margin: 5rem auto 0;
+  margin-bottom: 5rem;
   font-size: 2rem;
   font-weight: 500;
   max-width: 900px;
@@ -252,6 +253,39 @@ left: 50% + translateX(-50%) → centre horizontalement
   text-align: center;
 }
 
+/* ===================== CONFETTIS ===================== */
+
+/* Conteneur plein écran pour les confettis */
+.confetti-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2000;
+    overflow: hidden;
+}
+
+/* Chaque confetti est un petit rectangle coloré qui tombe */
+.confetti {
+    position: absolute;
+    top: -10px;
+    width: 10px;
+    height: 10px;
+    animation: confettiFall linear forwards;
+}
+
+/* L'animation fait tomber le confetti du haut vers le bas
+   avec une rotation pour un effet réaliste
+*/
+@keyframes confettiFall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
 
 /* RESPONSIVE MOBILE : résultats */
 @media (max-width: 700px) {

@@ -718,6 +718,7 @@ nextBtn.addEventListener("click", () => {
 
         setTimeout(() => {
             showResults();
+            quizBox.classList.remove("fade-out");   // ← AJOUTE CETTE LIGNE
         }, 300);
     }
 });
@@ -725,6 +726,7 @@ replayBtn.addEventListener("click", () => initialiserQuizz());
 
 
 function showResults() {
+    lancerConfettis(); 
     feedbackEl.textContent = "";
     quizContent.classList.add("hidden");
     resultBox.classList.remove("hidden");
@@ -746,3 +748,53 @@ function showResults() {
 }
 
 initialiserQuizz();
+
+
+// ===================== CONFETTIS =====================
+
+function lancerConfettis() {
+    // On crée un conteneur temporaire pour les confettis
+    var container = document.createElement("div");
+    container.classList.add("confetti-container");
+    document.body.appendChild(container);
+
+    // Couleurs des confettis (vert, blanc, or pour le thème foot)
+    var couleurs = ["#2ecc71", "#ffffff", "#f1c40f", "#e74c3c", "#3498db"];
+
+    // On crée 80 confettis
+    for (var i = 0; i < 80; i++) {
+        var confetti = document.createElement("div");
+        confetti.classList.add("confetti");
+
+        // Position horizontale aléatoire
+        confetti.style.left = Math.random() * 100 + "%";
+
+        // Couleur aléatoire prise dans le tableau
+        // Math.floor arrondit vers le bas pour avoir un index entier (0, 1, 2, 3 ou 4)
+        confetti.style.backgroundColor = couleurs[Math.floor(Math.random() * couleurs.length)];
+
+        // Taille aléatoire entre 6px et 12px
+        var taille = Math.random() * 6 + 6;
+        confetti.style.width = taille + "px";
+        confetti.style.height = taille + "px";
+
+        // Forme aléatoire : carré ou cercle
+        // Math.random() > 0.5 → 50% de chance d'être un cercle
+        if (Math.random() > 0.5) {
+            confetti.style.borderRadius = "50%";
+        }
+
+        // Durée de chute aléatoire entre 2s et 5s
+        confetti.style.animationDuration = (Math.random() * 3 + 2) + "s";
+
+        // Délai aléatoire entre 0s et 1.5s pour que tous ne tombent pas en même temps
+        confetti.style.animationDelay = (Math.random() * 1.5) + "s";
+
+        container.appendChild(confetti);
+    }
+
+    // On supprime le conteneur après 6 secondes (quand tous les confettis sont tombés)
+    setTimeout(function () {
+        container.remove();
+    }, 6000);
+}
