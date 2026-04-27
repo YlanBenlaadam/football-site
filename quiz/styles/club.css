@@ -169,6 +169,37 @@ main#top {
   display: none;
 }
 
+/* ===================== TRANSITIONS ENTRE QUESTIONS ===================== */
+
+/* La quiz-box a une transition sur l'opacité et le décalage */
+.quiz-box {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Quand le JS ajoute "fade-out", la box disparaît en fondu + monte légèrement */
+.quiz-box.fade-out {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+/* ===================== ANIMATION RÉSULTAT ===================== */
+
+/* Le résultat apparaît avec un effet de zoom */
+.result-box {
+    animation: scaleIn 0.5s ease-out;
+}
+
+@keyframes scaleIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 @media (max-width: 700px) {
   main#top {
     padding-left: calc(var(--sidebar-closed) + 0.5rem);

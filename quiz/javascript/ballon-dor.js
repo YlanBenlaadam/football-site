@@ -710,24 +710,54 @@ function handleAnswer(clickedButton, selectedOption, correctAnswer) {
   nextBtn.disabled = false;
 }
 
-nextBtn.addEventListener("click", () => {
-  currentQuestionIndex++;
+// Référence à la quiz-box pour l'animation
+const quizBox = document.querySelector(".quiz-box");
 
-  if (currentQuestionIndex < questions.length) {
-    renderQuestion();
-  } else {
-    showResults();
-  }
+nextBtn.addEventListener("click", () => {
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex < questions.length) {
+        // 1. Fade-out : on ajoute la classe qui fait disparaître la box
+        quizBox.classList.add("fade-out");
+
+        // 2. Après 300ms (le temps du fade-out), on change la question
+        setTimeout(() => {
+            renderQuestion();
+            // 3. On retire fade-out → la box réapparaît en fondu (grâce à la transition CSS)
+            quizBox.classList.remove("fade-out");
+        }, 300);
+    } else {
+        // Fade-out avant d'afficher les résultats
+        quizBox.classList.add("fade-out");
+
+        setTimeout(() => {
+            showResults();
+        }, 300);
+    }
 });
 
 replayBtn.addEventListener("click", () => initialiserQuizz());
 
 
 function showResults() {
-  feedbackEl.textContent = "";
-  quizContent.classList.add("hidden");
-  resultBox.classList.remove("hidden");
-  finalScoreEl.textContent = `${score} / ${questions.length}`;
+    feedbackEl.textContent = "";
+    quizContent.classList.add("hidden");
+    resultBox.classList.remove("hidden");
+    finalScoreEl.textContent = score + " / " + questions.length;
+
+    // Message personnalisé selon le score
+    var messageEl = document.getElementById("result-message");
+    if (messageEl) {
+        if (score === questions.length) {
+            messageEl.textContent = "Parfait ! Tu es un vrai expert ! 🏆";
+        } else if (score >= 3) {
+            messageEl.textContent = "Bien joué ! Tu connais ton football ! 👏";
+        } else if (score >= 1) {
+            messageEl.textContent = "Tu peux mieux faire, retente ta chance ! 💪";
+        } else {
+            messageEl.textContent = "Aïe... Il est temps de réviser ! 😅";
+        }
+    }
 }
 
 initialiserQuizz();
