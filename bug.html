@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/bug.css">
 </head>
-
 <body>
+    <!-- Particules flottantes -->
+    <div id="particles"></div>
+
     <header class="topbar">
         <div class="header-container">
             <div id="logo">⚽ FootAddict</div>
@@ -16,23 +18,22 @@
                 <ul>
                     <li><a href="./index.html#top">Accueil</a></li>
                     <li><a href="./quiz/quiz.html">Nos Quiz</a></li>
-                    <li><a href="./index.html#jeux">Jeux Vidéo</a></li>
+                    <li><a href="./jeux/jeux.html">Jeux Vidéo</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main id="top">
-    
-        <section class="hero">
+
+        <section class="hero fade-in">
             <div class="hero-inner">
                 <h1>⚠️ Signaler un bug</h1>
-                <p>Un bug a signaler sur le site, remplissez le formulaire ci-dessous !</p>
+                <p>Un bug à signaler sur le site, remplissez le formulaire ci-dessous !</p>
             </div>
         </section>
 
-        <section class="form-section">
-            <!-- Ouverture du form : tout ce qui est dedans sera envoyé par POST à FormSubmit -->
+        <section class="form-section fade-in">
             <form action="https://formsubmit.co/ylanbenlaadammailpro@gmail.com" method="POST" class="bug-form">
 
                 <input type="hidden" name="_captcha" value="false" />
@@ -60,15 +61,13 @@
                 <textarea id="message" name="message" rows="6" placeholder="Décris le problème rencontré..." required></textarea>
 
                 <button type="submit" class="btn-submit">Envoyer le signalement ⚽</button>
-
-            <!-- Fermeture du form ICI, après tous les champs -->
             </form>
         </section>
 
     </main>
 
     <!-- FOOTER -->
-   <footer>
+    <footer>
         <div class="footer-container">
             <p>© 2026 FootAddict - Tous droits réservés</p>
             <div class="logo-container">
@@ -79,7 +78,7 @@
                     <img src="images/insta-logo.png" alt="Instagram">
                 </a>
                 <a href="https://discord.gg/RyQT8xwV">
-                    <img src="images/discord-logo.png" alt="">
+                    <img src="images/discord-logo.png" alt="Discord">
                 </a>
             </div>
             <div class="footer-links">
@@ -87,8 +86,8 @@
                 <a href="./bug.html">Signaler un bug</a>
             </div>
         </div>
-</footer>
+    </footer>
 
-
+    <script src="./scripts/animations.js"></script>
 </body>
 </html>
