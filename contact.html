@@ -8,8 +8,10 @@
   <link rel="stylesheet" href="./styles/contact.css" />
 </head>
 <body>
+  <!-- Particules flottantes -->
+  <div id="particles"></div>
 
-  <!-- TOPBAR (identique aux autres pages) -->
+  <!-- TOPBAR -->
   <header class="topbar">
     <div class="header-container">
       <div id="logo">⚽ FootAddict</div>
@@ -17,42 +19,26 @@
         <ul>
           <li><a href="./index.html#top">Accueil</a></li>
           <li><a href="./quiz/quiz.html">Nos Quiz</a></li>
-          <li><a href="./index.html#jeux">Jeux Vidéo</a></li>
+          <li><a href="./jeux/jeux.html">Jeux Vidéo</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main id="top">
-    
-    <section class="hero">
+
+    <section class="hero fade-in">
       <div class="hero-inner">
         <h1>📬 Nous contacter</h1>
         <p>Une question, une suggestion ou juste un mot sympa ? Écris-nous !</p>
       </div>
     </section>
 
-    <section class="form-section">
-
-      <!-- 
-        action = URL FormSubmit avec ton mail → le service envoie le contenu du form à cette adresse
-        method="POST" → les données sont envoyées dans le corps de la requête (pas dans l'URL)
-        Les "name" de chaque input = les clés que FormSubmit utilise pour construire le mail
-        Donc tout les input sauf les hidden nous seront envoyer par mail
-      -->
+    <section class="form-section fade-in">
       <form action="https://formsubmit.co/ylanbenlaadammailpro@gmail.com" method="POST" class="contact-form">
 
-        <!-- 
-            Champ caché : désactive le captcha de FormSubmit
-            RQ -> le "_" indique que l'instruction est pour le for submit donc c pas pour le formulaire
-         
-        -->
         <input type="hidden" name="_captcha" value="false" />
-
-        <!-- Champ caché : redirige vers cette page après envoi au lieu de la page FormSubmit -->
         <input type="hidden" name="_next" value="https://ylanbenlaadam.github.io/football-site/contact.html" />
-
-        <!-- Champ caché : sujet du mail reçu dans ta boîte (l'objet du mail ) -->
         <input type="hidden" name="_subject" value="Nouveau message FootAddict" />
 
         <label for="name">Ton pseudo</label>
@@ -62,9 +48,8 @@
         <input type="email" id="email" name="email" placeholder="ton@email.com" required />
 
         <label for="subject">Sujet</label>
-        <!-- select = menu déroulant, chaque option = un choix possible -->
         <select id="subject" name="subject" required>
-          <option value="" >Choisis un sujet</option> <!--permet d'afficher un texte sur le rectangle du menu deroulant-->
+          <option value="">Choisis un sujet</option>
           <option value="suggestion">Suggestion</option>
           <option value="question">Question</option>
           <option value="partenariat">Partenariat</option>
@@ -72,12 +57,10 @@
         </select>
 
         <label for="message">Ton message</label>
-        <!-- textarea = zone de texte multi-lignes (contrairement à input qui est sur une seule ligne) -->
         <textarea id="message" name="message" rows="6" placeholder="Écris ton message ici..." required></textarea>
 
         <button type="submit" class="btn-submit">Envoyer le message ⚽</button>
       </form>
-
     </section>
 
   </main>
@@ -85,27 +68,25 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-container">
-        <p>© 2026 FootAddict - Tous droits réservés</p>
-        <div class="logo-container">
-            <a href="https://x.com/FootAddicttt">
-                <img src="images/twitter-logo.png" alt="Twitter">
-            </a>
-
-            <a href="https://www.instagram.com/foot_addictt/">
-                <img src="images/insta-logo.png" alt="Instagram">
-            </a>
-
-            <a href="https://discord.gg/RyQT8xwV">
-                <img src="images/discord-logo.png" alt="">
-            </a>
-        </div>
-        <div class="footer-links">
-            <a href="./contact.html">Nous contacter</a>
-            <a href="./bug.html">Signaler un bug</a>
-        </div>
+      <p>© 2026 FootAddict - Tous droits réservés</p>
+      <div class="logo-container">
+        <a href="https://x.com/FootAddicttt">
+          <img src="images/twitter-logo.png" alt="Twitter">
+        </a>
+        <a href="https://www.instagram.com/foot_addictt/">
+          <img src="images/insta-logo.png" alt="Instagram">
+        </a>
+        <a href="https://discord.gg/RyQT8xwV">
+          <img src="images/discord-logo.png" alt="Discord">
+        </a>
+      </div>
+      <div class="footer-links">
+        <a href="./contact.html">Nous contacter</a>
+        <a href="./bug.html">Signaler un bug</a>
+      </div>
     </div>
-</footer>
+  </footer>
 
-
+  <script src="./scripts/animations.js"></script>
 </body>
 </html>
